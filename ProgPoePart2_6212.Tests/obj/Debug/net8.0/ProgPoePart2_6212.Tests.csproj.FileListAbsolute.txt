@@ -164,6 +164,7 @@ C:\Users\davyc\source\repos\ProgPoePart2_6212\ProgPoePart2_6212.Tests\obj\Debug\
 C:\Users\davyc\source\repos\ProgPoePart2_6212\ProgPoePart2_6212.Tests\obj\Debug\net8.0\ProgPoePart2_6212.Tests.AssemblyInfoInputs.cache
 C:\Users\davyc\source\repos\ProgPoePart2_6212\ProgPoePart2_6212.Tests\obj\Debug\net8.0\ProgPoePart2_6212.Tests.AssemblyInfo.cs
 C:\Users\davyc\source\repos\ProgPoePart2_6212\ProgPoePart2_6212.Tests\obj\Debug\net8.0\ProgPoePart2_6212.Tests.csproj.CoreCompileInputs.cache
+C:\Users\davyc\source\repos\ProgPoePart2_6212\ProgPoePart2_6212.Tests\obj\Debug\net8.0\ProgPoePart2_6212.Tests.sourcelink.json
 C:\Users\davyc\source\repos\ProgPoePart2_6212\ProgPoePart2_6212.Tests\obj\Debug\net8.0\ProgPoeP.58003E6D.Up2Date
 C:\Users\davyc\source\repos\ProgPoePart2_6212\ProgPoePart2_6212.Tests\obj\Debug\net8.0\ProgPoePart2_6212.Tests.dll
 C:\Users\davyc\source\repos\ProgPoePart2_6212\ProgPoePart2_6212.Tests\obj\Debug\net8.0\refint\ProgPoePart2_6212.Tests.dll
