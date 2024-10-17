@@ -1,5 +1,31 @@
-﻿ @{
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+@{
     ViewData["Title"] = "Home";
+
+    // Declare variables for user details and roles
+    string userName = "Guest";
+    bool isCoordinator = false;
+    bool isManager = false;
+    bool isLecturer = false;
+
+    if (SignInManager.IsSignedIn(User))
+    {
+        // Fetch the logged-in user asynchronously
+        var user = await UserManager.GetUserAsync(User);
+        if (user != null)
+        {
+            userName = user.UserName;
+
+            // Fetch roles asynchronously
+            var roles = await UserManager.GetRolesAsync(user);
+            isCoordinator = roles.Contains("ProgrammeCoordinator");
+            isManager = roles.Contains("AcademicManager");
+            isLecturer = roles.Contains("Lecturer");
+        }
+    }
 }
 
 <!DOCTYPE html>
@@ -112,9 +138,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Login", "Account")">Login</a>
-                </li>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Logout", "Account")">Logout</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Login", "Account")">Login</a>
+                    </li>
+                }
             </ul>
         </div>
     </nav>
@@ -122,27 +157,72 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="container">
-            <h1 class="display-4">Welcome to the Contract Monthly Claim System</h1>
-            <p class="lead">Effortlessly manage your claims and stay on top of your submissions.</p>
-            <a class="btn btn-primary btn-lg" href="@Url.Action("Login", "Account")" role="button">Login</a>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <h1 class="display-4">Hello, @userName</h1>
+                <p class="lead">
+                    @if (isCoordinator)
+                    {
+                        <span>Verify and manage claims efficiently.</span>
+                    }
+                    else if (isManager)
+                    {
+                        <span>Approve claims and manage overall operations.</span>
+                    }
+                    else if (isLecturer)
+                    {
+                        <span>Submit claims and track your submissions.</span>
+                    }
+                </p>
+
+                @if (isCoordinator)
+                {
+                    <a class="btn btn-primary btn-lg" href="@Url.Action("PendingClaims", "CoordinatorClaims")" role="button">Verify Claims</a>
+                }
+                else if (isManager)
+                {
+                    <a class="btn btn-primary btn-lg" href="@Url.Action("AllClaims", "ManagerClaims")" role="button">Approve Claims</a>
+                }
+                else if (isLecturer)
+                {
+                    <a class="btn btn-primary btn-lg" href="@Url.Action("SubmitClaim", "LecturerClaims")" role="button">Submit Claims</a>
+                }
+            }
+            else
+            {
+                <h1 class="display-4">Welcome to the Contract Monthly Claim System</h1>
+                <p class="lead">Effortlessly manage your claims and stay on top of your submissions.</p>
+                <a class="btn btn-primary btn-lg" href="@Url.Action("Login", "Account")" role="button">Login</a>
+            }
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="container mt-5">
         <div class="row">
-            <div class="col-md-4 text-center">
-                <h2>Submit Claims</h2>
-                <p>Quickly submit your claims for review and approval.</p>
-            </div>
-            <div class="col-md-4 text-center">
-                <h2>Approve Claims</h2>
-                <p>Review and approve claims submitted by lecturers.</p>
-            </div>
-            <div class="col-md-4 text-center">
-                <h2>Verify Claims</h2>
-                <p>Ensure all claims meet the necessary requirements.</p>
-            </div>
+            @if (isLecturer)
+            {
+                <div class="col-md-4 text-center">
+                    <h2>Submit Claims</h2>
+                    <p>Quickly submit your claims for review and approval.</p>
+                </div>
+            }
+            @if (isCoordinator)
+            {
+                <div class="col-md-4 text-center">
+                    <h2>Verify Claims</h2>
+                    <p>Ensure all claims meet the necessary requirements.</p>
+                    <a class="btn btn-primary" href="@Url.Action("PendingClaims", "CoordinatorClaims")">Verify Claims</a>
+                </div>
+            }
+            @if (isManager)
+            {
+                <div class="col-md-4 text-center">
+                    <h2>Approve Claims</h2>
+                    <p>Review and approve claims submitted by lecturers.</p>
+                    <a class="btn btn-primary" href="@Url.Action("AllClaims", "ManagerClaims")">Approve Claims</a>
+                </div>
+            }
         </div>
 
         <!-- About Us Section -->
