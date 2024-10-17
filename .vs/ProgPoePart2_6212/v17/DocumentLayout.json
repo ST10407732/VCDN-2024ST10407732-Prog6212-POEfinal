@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|c:\\users\\davyc\\source\\repos\\progpoepart2_6212\\progpoepart2_6212\\views\\lecturerclaims\\trackclaim.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|c:\\users\\davyc\\source\\repos\\progpoepart2_6212\\progpoepart2_6212\\views\\lecturerclaims\\trackclaims.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\views\\lecturerclaims\\trackclaims.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\progpoepart2_6212\\views\\lecturerclaims\\trackclaim.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\views\\lecturerclaims\\trackclaim.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -41,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\progpoepart2_6212\\views\\managerclaims\\allclaims.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\views\\managerclaims\\allclaims.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\progpoepart2_6212\\views\\lecturerclaims\\trackclaims.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\views\\lecturerclaims\\trackclaims.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\progpoepart2_6212\\views\\lecturerclaims\\uploaddocument.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -90,11 +90,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TrackClaim.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\LecturerClaims\\TrackClaim.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\LecturerClaims\\TrackClaim.cshtml",
@@ -102,12 +106,11 @@
               "RelativeToolTip": "ProgPoePart2_6212\\Views\\LecturerClaims\\TrackClaim.cshtml",
               "ViewState": "AQIAAGkAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-17T18:56:39.484Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T18:56:39.484Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\LecturerClaims\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\LecturerClaims\\Dashboard.cshtml",
@@ -119,7 +122,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\ViewModels\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\ViewModels\\RegisterViewModel.cs",
@@ -131,7 +134,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "TrackClaims.cshtml",
+              "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\LecturerClaims\\TrackClaims.cshtml",
+              "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\LecturerClaims\\TrackClaims.cshtml",
+              "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\LecturerClaims\\TrackClaims.cshtml",
+              "RelativeToolTip": "ProgPoePart2_6212\\Views\\LecturerClaims\\TrackClaims.cshtml",
+              "ViewState": "AQIAAI0AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-17T18:57:13.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\Account\\Login.cshtml",
@@ -143,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PendingClaims.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\CoordinatorClaims\\PendingClaims.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\CoordinatorClaims\\PendingClaims.cshtml",
@@ -154,16 +174,8 @@
               "WhenOpened": "2024-10-17T18:57:37.168Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "SubmitClaim.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\LecturerClaims\\SubmitClaim.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\LecturerClaims\\SubmitClaim.cshtml",
@@ -175,7 +187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\Account\\Register.cshtml",
@@ -187,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\ViewModels\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\ViewModels\\LoginViewModel.cs",
@@ -199,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\Home\\Index.cshtml",
@@ -211,7 +223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "AllClaims.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\ManagerClaims\\AllClaims.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\ManagerClaims\\AllClaims.cshtml",
@@ -220,18 +232,6 @@
               "ViewState": "AQIAAAMBAAAAAAAAAAAQwCEBAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-17T18:57:24.663Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "TrackClaims.cshtml",
-              "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\LecturerClaims\\TrackClaims.cshtml",
-              "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\LecturerClaims\\TrackClaims.cshtml",
-              "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\LecturerClaims\\TrackClaims.cshtml",
-              "RelativeToolTip": "ProgPoePart2_6212\\Views\\LecturerClaims\\TrackClaims.cshtml",
-              "ViewState": "AQIAAHYAAAAAAAAAAAAQwJQAAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-17T18:57:13.57Z"
             },
             {
               "$type": "Document",
