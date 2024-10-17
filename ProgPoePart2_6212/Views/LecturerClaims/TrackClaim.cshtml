@@ -1,0 +1,151 @@
+﻿@* @model ProgPoePart2_6212.Models.LecturerClaim
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Claim - @Model.Id</title>
+    <style>
+        body {
+            background-color: #f0f8ff; /* Alice blue background */
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            background-color: #ffffff; /* White background for the container */
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 2.5rem;
+            max-width: 600px;
+            margin: 2rem auto;
+            border: 2px solid #8c5e3c; /* Brown border for emphasis */
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+            color: #8c5e3c; /* Rich brown for the heading */
+            text-align: center;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        strong {
+            color: #704c2f; /* Darker brown for the labels */
+            font-size: 1.1rem;
+        }
+
+        .btn-secondary {
+            background-color: #8c5e3c; /* Brown button */
+            color: white;
+            padding: .75rem 1.5rem;
+            border: none;
+            border-radius: .5rem;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            text-decoration: none; /* Make it look like a button */
+            width: 100%;
+        }
+
+            .btn-secondary:hover {
+                background-color: #704c2f; /* Darker brown on hover */
+            }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+            .table th, .table td {
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .table th {
+                background-color: #ffcc00; /* Vivid yellow for table headings */
+                color: #333; /* Dark grey for text */
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+
+            .table tr:hover {
+                background-color: #f1f1f1; /* Light grey on row hover */
+            }
+
+        .total-amount {
+            color: #28a745; /* Green for total amount */
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+            list-style-type: square; /* Square bullets */
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        a {
+            color: #007bff; /* Bootstrap blue for links */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+            a:hover {
+                text-decoration: underline; /* Underline on hover */
+                color: #0056b3; /* Darker blue on hover */
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Track Claim - @Model.Id</h2>
+
+        <div>
+            <p><strong>Hours Worked:</strong> @Model.HoursWorked</p>
+            <p><strong>Hourly Rate:</strong> @Model.HourlyRate</p>
+            <p class="total-amount"><strong>Total Amount:</strong> @(Model.HoursWorked * Model.HourlyRate)</p>
+            <p><strong>Status:</strong> @Model.Status</p>
+        </div>
+
+        @if (Model.Documents != null && Model.Documents.Any())
+        {
+            <h3>Supporting Documents</h3>
+            <ul>
+                @foreach (var doc in Model.Documents)
+                {
+                    <li>
+                        <a href="@Url.Content(doc.FilePath)" target="_blank">@doc.FileName</a> (Uploaded on: @doc.UploadDate.ToShortDateString())
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>No supporting documents uploaded.</p>
+        }
+
+        <a asp-action="Dashboard" class="btn-secondary">Back to Dashboard</a>
+    </div>
+</body>
+</html>
+ *@

@@ -1,0 +1,290 @@
+﻿@* @model IEnumerable<ProgPoePart2_6212.Models.LecturerClaim>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Claims</title>
+    <style>
+        body {
+            background-color: #f5f5f5; /* Light grey background */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2, h3 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #fff; /* White background for the container */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            color: #333;
+        }
+
+        th {
+            background-color: saddlebrown; /* Dark green header background */
+            color: #f8f9fa; /* Light color for text in headers */
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2; /* Light grey for alternating rows */
+        }
+
+        .btn {
+            padding: .375rem .75rem;
+            border-radius: .25rem;
+            text-decoration: none;
+            color: #fff;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+
+        .btn-success {
+            background-color: #28a745; /* Green */
+        }
+
+        .btn-danger {
+            background-color: #dc3545; /* Red */
+        }
+
+        .btn-success:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333; /* Darker red on hover */
+        }
+
+        .document-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .document-item {
+            margin-bottom: 5px;
+        }
+
+        .document-link {
+            color: #007bff; /* Blue color for document links */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+            .document-link:hover {
+                text-decoration: underline;
+            }
+
+        .document-date {
+            font-size: 0.9em;
+            color: #6c757d; /* Grey for document date */
+        }
+
+        /* Section styling */
+        .section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: #fef3e2; /* Light brown background for sections */
+            border-radius: 8px;
+        }
+
+            .section h3 {
+                text-align: center;
+            }
+
+        /* Styles for claim status headings */
+        .pending-claims {
+            color: #8B4513; /* Brown for pending claims */
+        }
+
+        .approved-claims {
+            color: #4a7c2b; /* Dark green for approved claims */
+        }
+
+        .rejected-claims {
+            color: #dc3545; /* Red for rejected claims */
+        }
+
+        /* Custom row styles for different statuses */
+        .status-approved {
+            background-color: #d4edda; /* Light green for approved claims */
+        }
+
+        .status-rejected {
+            background-color: #f8d7da; /* Light red for rejected claims */
+        }
+
+        .status-pending {
+            background-color: #fff3cd; /* Light brown for pending claims */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>All Claims</h2>
+
+        <div class="section">
+            <h3 class="pending-claims">Claims Pending for Approval</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Lecturer</th>
+                        <th>Hours Worked</th>
+                        <th>Hourly Rate</th>
+                        <th>Status</th>
+                        <th>Documents</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var claim in Model.Where(c => c.Status == ClaimStatus.PendingApproval))
+                    {
+                        <tr class="status-pending">
+                            <td>@claim.User?.FullName</td>
+                            <td>@claim.HoursWorked</td>
+                            <td>@claim.HourlyRate</td>
+                            <td>@claim.Status</td>
+                            <td>
+                                @if (claim.Documents != null && claim.Documents.Any())
+                                {
+                                    <div class="document-list">
+                                        @foreach (var document in claim.Documents)
+                                        {
+                                            <div class="document-item">
+                                                <a href="@Url.Content($"~/Uploads/{claim.Id}/{document.FileName}")" class="document-link">
+                                                    @document.FileName
+                                                </a>
+                                                <span class="document-date"> - Uploaded on @document.UploadDate.ToShortDateString()</span>
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                                else
+                                {
+                                    <span>No documents uploaded.</span>
+                                }
+                            </td>
+                            <td>
+                                <a asp-action="ApproveClaim" asp-route-id="@claim.Id" class="btn btn-success">Approve</a>
+                                <a asp-action="RejectClaim" asp-route-id="@claim.Id" class="btn btn-danger">Reject</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h3 class="approved-claims">Approved Claims</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Lecturer</th>
+                        <th>Hours Worked</th>
+                        <th>Hourly Rate</th>
+                        <th>Status</th>
+                        <th>Documents</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var claim in Model.Where(c => c.Status == ClaimStatus.Approved))
+                    {
+                        <tr class="status-approved">
+                            <td>@claim.User?.FullName</td>
+                            <td>@claim.HoursWorked</td>
+                            <td>@claim.HourlyRate</td>
+                            <td>@claim.Status</td>
+                            <td>
+                                @if (claim.Documents != null && claim.Documents.Any())
+                                {
+                                    <div class="document-list">
+                                        @foreach (var document in claim.Documents)
+                                        {
+                                            <div class="document-item">
+                                                <a href="@Url.Content($"~/Uploads/{claim.Id}/{document.FileName}")" class="document-link">
+                                                    @document.FileName
+                                                </a>
+                                                <span class="document-date"> - Uploaded on @document.UploadDate.ToShortDateString()</span>
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                                else
+                                {
+                                    <span>No documents uploaded.</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h3 class="rejected-claims">Rejected Claims</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Lecturer</th>
+                        <th>Hours Worked</th>
+                        <th>Hourly Rate</th>
+                        <th>Status</th>
+                        <th>Documents</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var claim in Model.Where(c => c.Status == ClaimStatus.Rejected))
+                    {
+                        <tr class="status-rejected">
+                            <td>@claim.User?.FullName</td>
+                            <td>@claim.HoursWorked</td>
+                            <td>@claim.HourlyRate</td>
+                            <td>@claim.Status</td>
+                            <td>
+                                @if (claim.Documents != null && claim.Documents.Any())
+                                {
+                                    <div class="document-list">
+                                        @foreach (var document in claim.Documents)
+                                        {
+                                            <div class="document-item">
+                                                <a href="@Url.Content($"~/Uploads/{claim.Id}/{document.FileName}")" class="document-link">
+                                                    @document.FileName
+                                                </a>
+                                                <span class="document-date"> - Uploaded on @document.UploadDate.ToShortDateString()</span>
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                                else
+                                {
+                                    <span>No documents uploaded.</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+ *@
