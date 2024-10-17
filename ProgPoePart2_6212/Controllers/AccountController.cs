@@ -83,6 +83,14 @@ namespace ProgPoePart2_6212.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    // Check if user exists
+                    var user = await _userManager.FindByEmailAsync(model.Email);
+                    if (user == null)
+                    {
+                        ModelState.AddModelError("Email", "No account found with this email. Please register if you don't have an account.");
+                        return View(model);
+                    }
+
                     var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
 
                     if (result.Succeeded)
@@ -95,6 +103,7 @@ namespace ProgPoePart2_6212.Controllers
 
                 return View(model);
             }
+
 
             // Logout Action
             [HttpPost]

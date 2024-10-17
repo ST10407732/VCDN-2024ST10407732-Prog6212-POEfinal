@@ -209,31 +209,7 @@ namespace ProgPoePart2_6212.Controllers
 
             return View(claim); // Pass the claim details to the view
         }
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> DeleteClaim(int id)
-        //{
-        //    var claim = await _context.LecturerClaims.Include(c => c.Documents).FirstOrDefaultAsync(c => c.Id == id);
-        //    if (claim == null || claim.User.Email != User.Identity.Name)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    // Delete associated documents from the file system
-        //    foreach (var document in claim.Documents)
-        //    {
-        //        if (System.IO.File.Exists(document.FilePath))
-        //        {
-        //            System.IO.File.Delete(document.FilePath);
-        //        }
-        //    }
-
-        //    _context.LecturerClaims.Remove(claim);
-        //    await _context.SaveChangesAsync();
-
-        //    TempData["SuccessMessage"] = "Claim and associated documents deleted successfully.";
-        //    return RedirectToAction(nameof(TrackClaims));
-        //}
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteClaim(int id)
