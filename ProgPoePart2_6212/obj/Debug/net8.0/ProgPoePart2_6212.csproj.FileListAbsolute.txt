@@ -441,3 +441,4 @@ C:\Users\davyc\source\repos\ProgPoePart2_6212\ProgPoePart2_6212\obj\Debug\net8.0
 C:\Users\davyc\source\repos\ProgPoePart2_6212\ProgPoePart2_6212\obj\Debug\net8.0\ProgPoePart2_6212.pdb
 C:\Users\davyc\source\repos\ProgPoePart2_6212\ProgPoePart2_6212\obj\Debug\net8.0\ProgPoePart2_6212.genruntimeconfig.cache
 C:\Users\davyc\source\repos\ProgPoePart2_6212\ProgPoePart2_6212\obj\Debug\net8.0\ref\ProgPoePart2_6212.dll
+C:\Users\davyc\source\repos\ProgPoePart2_6212\ProgPoePart2_6212\obj\Debug\net8.0\ProgPoePart2_6212.sourcelink.json
