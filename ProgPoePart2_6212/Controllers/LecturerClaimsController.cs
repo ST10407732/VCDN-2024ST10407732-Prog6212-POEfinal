@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using ProgPoePart2_6212.Validators;
 
 namespace ProgPoePart2_6212.Controllers
 {
@@ -33,32 +34,49 @@ namespace ProgPoePart2_6212.Controllers
             return View();
         }
 
+        // GET: SubmitClaim
+     
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> SubmitClaim(LecturerClaim claim, IFormFile DocumentUpload)
         {
             try
             {
+                // Step 1: Validate the claim using the custom validator
+                var validator = new LecturerClaimValidator();
+                var validationResult = await validator.ValidateAsync(claim);
+
+                // Step 2: If validation fails, add the errors to ModelState and return the view
+                if (!validationResult.IsValid)
+                {
+                    foreach (var failure in validationResult.Errors)
+                    {
+                        ModelState.AddModelError(failure.PropertyName, failure.ErrorMessage);
+                    }
+                    return View(claim); // Return to the form with validation errors
+                }
+
+                // Step 3: Retrieve the current user (lecturer) from _userManager
                 var currentUser = await _userManager.GetUserAsync(User);
                 if (currentUser == null)
                 {
                     _logger.LogWarning("User not found.");
-                    return Challenge();
+                    return Challenge(); // Redirect to login if no user found
                 }
 
-                // Associate the claim with the current user and set its status
+                // Step 4: Associate the claim with the current user and set its status
                 claim.User = currentUser;
                 claim.Status = ClaimStatus.PendingVerification;
 
-                // Save the claim to the database
+                // Step 5: Save the claim to the database
                 await _context.LecturerClaims.AddAsync(claim);
                 await _context.SaveChangesAsync();
 
-                // If a file has been uploaded, handle the document upload
+                // Step 6: Handle file upload (if any)
                 if (DocumentUpload != null)
                 {
                     // Construct the file path where the document will be saved
-                    var uploadDirectory = Path.Combine("Uploads", claim.Id.ToString()); // Each claim gets its own folder
+                    var uploadDirectory = Path.Combine("Uploads", claim.Id.ToString());
                     Directory.CreateDirectory(uploadDirectory); // Ensure the directory exists
 
                     var filePath = Path.Combine(uploadDirectory, DocumentUpload.FileName);
@@ -69,7 +87,7 @@ namespace ProgPoePart2_6212.Controllers
                         await DocumentUpload.CopyToAsync(stream);
                     }
 
-                    // Create and save a new SuppDocument associated with the claim
+                    // Create and save the document entry in the database
                     var document = new SuppDocument
                     {
                         Claim = claim,
@@ -79,19 +97,23 @@ namespace ProgPoePart2_6212.Controllers
                         UploadDate = DateTime.Now
                     };
 
-                    _context.Documents.Add(document); // Assuming you have a DbSet<SuppDocument> in your DbContext
+                    _context.Documents.Add(document);
                     await _context.SaveChangesAsync();
                 }
 
+                // Step 7: Log the successful claim submission
                 _logger.LogInformation("Claim submitted successfully with ID: {ClaimId}", claim.Id);
+
+                // Redirect to TrackClaims page
                 return RedirectToAction(nameof(TrackClaims));
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error submitting the claim.");
-                return View(claim);
+                return View(claim); // Return to the form with the error
             }
         }
+
 
 
         // GET: UploadDocument

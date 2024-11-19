@@ -1,0 +1,36 @@
+﻿@using ProgPoePart2_6212.Models
+@{
+    ViewData["Title"] = "Manage Claims";
+}
+
+<h2>Manage Claims</h2>
+
+<form method="post" asp-action="BulkProcessClaims">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>Lecturer</th>
+                <th>Hours Worked</th>
+                <th>Hourly Rate</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var claim in Model)
+            {
+                <tr>
+                    <td><input type="checkbox" name="selectedClaims" value="@claim.Id" /></td>
+                    <td>@claim.User.FullName</td>
+                    <td>@claim.HoursWorked</td>
+                    <td>@claim.HourlyRate.ToString("C")</td>
+                    <td>@claim.Status</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button type="submit" name="action" value="approve" class="btn btn-success">Approve Selected</button>
+    <button type="submit" name="action" value="reject" class="btn btn-danger">Reject Selected</button>
+</form>
+
+</div>

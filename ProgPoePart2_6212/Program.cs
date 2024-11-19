@@ -2,6 +2,15 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ProgPoePart2_6212.Data;  // Update to match your project namespace
 using ProgPoePart2_6212.Models; // Update to match your User model
+using ProgPoePart2_6212.Services; // Update to match your User model
+
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Net;
+using System.Net.Mail;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +44,8 @@ builder.Services.Configure<IdentityOptions>(options =>
     // User settings
     options.User.RequireUniqueEmail = true;
 });
+builder.Services.AddSingleton<ProgPoePart2_6212.Services.IEmailSender, ProgPoePart2_6212.Services.EmailSender>();
+
 
 var app = builder.Build();
 
@@ -78,3 +89,5 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+  

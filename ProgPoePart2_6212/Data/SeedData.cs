@@ -14,7 +14,7 @@ public class SeedData
         var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
         // Ensure the roles exist
-        string[] roles = new string[] { "ProgrammeCoordinator", "AcademicManager", "Lecturer" };// "HR",
+        string[] roles = new string[] { "ProgrammeCoordinator", "AcademicManager", "Lecturer" , "HR" };
         foreach (var role in roles)
         {
             if (!await roleManager.RoleExistsAsync(role))
@@ -53,19 +53,19 @@ public class SeedData
             await userManager.AddToRoleAsync(academicManager, "AcademicManager");
         }
 
-        //// Create the HR
-        //var HR = new User
-        //{
-        //    UserName = "hr@admin.com",
-        //    Email = "hr@admin.com",
-        //    FullName = "HR",
-        //    EmailConfirmed = true
-        //};
+        // Create the HR
+        var HR = new User
+        {
+            UserName = "hr@cmcs.com",
+            Email = "hr@cmcs.com",
+            FullName = "HR",
+            EmailConfirmed = true
+        };
 
-        //if (await userManager.FindByEmailAsync(HR.Email) == null)
-        //{
-        //    await userManager.CreateAsync(HR, "Admin@22");
-        //    await userManager.AddToRoleAsync(HR, "HR");
-        //}
+        if (await userManager.FindByEmailAsync(HR.Email) == null)
+        {
+            await userManager.CreateAsync(HR, "Hrcmcs@123");
+            await userManager.AddToRoleAsync(HR, "HR");
+        }
     }
 }

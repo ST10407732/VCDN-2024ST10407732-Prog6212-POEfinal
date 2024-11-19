@@ -1,4 +1,4 @@
-﻿ @model IEnumerable<ProgPoePart2_6212.Models.LecturerClaim>
+﻿@model IEnumerable<ProgPoePart2_6212.Models.LecturerClaim>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -100,6 +100,7 @@
                 <tr>
                     <th>Hours Worked</th>
                     <th>Hourly Rate</th>
+                    <th>Total</th> <!-- New column for Total -->
                     <th>Status</th>
                     <th>Notes</th>
                     <th>Documents</th>
@@ -112,6 +113,7 @@
                     <tr>
                         <td>@claim.HoursWorked</td>
                         <td>@claim.HourlyRate</td>
+                        <td>@(claim.HoursWorked * claim.HourlyRate)</td> <!-- Calculate and display the total -->
                         <td>@claim.Status</td>
                         <td>@claim.Notes</td>
                         <td>

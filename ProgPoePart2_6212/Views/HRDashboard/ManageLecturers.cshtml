@@ -1,0 +1,110 @@
+﻿@model IEnumerable<ProgPoePart2_6212.Models.User>
+@{
+    ViewData["Title"] = "Manage Lecturers";
+}
+
+<h2>Manage Lecturers</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var lecturer in Model)
+        {
+            <tr>
+                <td>@lecturer.FullName</td>
+                <td>@lecturer.Email</td>
+                <td>
+                    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal"
+                            data-id="@lecturer.Id"
+                            data-name="@lecturer.FullName"
+                            data-email="@lecturer.Email">
+                        Edit
+                    </button>
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                            data-id="@lecturer.Id"
+                            data-name="@lecturer.FullName">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Modal for Editing Lecturer Details -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="editLecturerForm" method="post" asp-controller="HRDashboard" asp-action="EditLecturer">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Edit Lecturer Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="Id" id="lecturerId" />
+                    <div class="mb-3">
+                        <label for="lecturerName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="lecturerName" name="FullName" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="lecturerEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="lecturerEmail" name="Email" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Deleting Lecturer -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="deleteLecturerForm" method="post" asp-controller="HRDashboard" asp-action="DeleteLecturer">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Delete Lecturer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="Id" id="deleteLecturerId" />
+                    <p>Are you sure you want to delete <strong id="deleteLecturerName"></strong>?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Populate modal fields for editing lecturer
+        document.querySelectorAll('[data-bs-toggle="modal"][data-bs-target="#editModal"]').forEach(button => {
+            button.addEventListener('click', () => {
+                document.getElementById('lecturerId').value = button.getAttribute('data-id');
+                document.getElementById('lecturerName').value = button.getAttribute('data-name');
+                document.getElementById('lecturerEmail').value = button.getAttribute('data-email');
+            });
+        });
+
+        // Populate modal fields for deleting lecturer
+        document.querySelectorAll('[data-bs-toggle="modal"][data-bs-target="#deleteModal"]').forEach(button => {
+            button.addEventListener('click', () => {
+                document.getElementById('deleteLecturerId').value = button.getAttribute('data-id');
+                document.getElementById('deleteLecturerName').textContent = button.getAttribute('data-name');
+            });
+        });
+    </script>
+}

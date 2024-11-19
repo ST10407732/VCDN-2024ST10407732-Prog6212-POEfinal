@@ -1,0 +1,29 @@
+﻿<div>
+    <h2>Approved Claims Report</h2>
+    <a asp-action="DownloadPdfReport" class="btn btn-primary">Download PDF</a>
+    <a asp-action="DownloadExcelReport" class="btn btn-success">Download Excel</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Lecturer</th>
+            <th>Hours Worked</th>
+            <th>Hourly Rate</th>
+            <th>Total Amount</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var claim in Model)
+        {
+            <tr>
+                <td>@claim.Name</td>
+                <td>@claim.HoursWorked</td>
+                <td>@claim.HourlyRate.ToString("C")</td>
+                <td>@(claim.HoursWorked * claim.HourlyRate).ToString("C")</td>
+                <td>@claim.Notes</td>
+            </tr>
+        }
+    </tbody>
+</table>

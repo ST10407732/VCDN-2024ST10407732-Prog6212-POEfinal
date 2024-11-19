@@ -1,0 +1,24 @@
+﻿@using ProgPoePart2_6212.Models
+@{
+    ViewData["Title"] = "HR Dashboard";
+}
+
+<h2>HR Dashboard</h2>
+
+<div class="dashboard">
+    <div class="dashboard-item">
+        <h3>Manage Lecturers</h3>
+        <p>Manage all lecturer information</p>
+        <a href="@Url.Action("ManageLecturers", "HRDashboard")" class="btn btn-primary">Manage Lecturers</a>
+    </div>
+    <div class="dashboard-item">
+        <h3>Manage Claims</h3>
+        <p>Review and approve claims</p>
+        <a href="@Url.Action("ManageClaims", "HRDashboard")" class="btn btn-primary">Manage Claims</a>
+    </div>
+    <div class="dashboard-item">
+        <h3>Generate Reports</h3>
+        <p>Generate invoices and claims reports</p>
+        <a href="@Url.Action("GenerateReports", "HRDashboard")" class="btn btn-primary">Generate Reports</a>
+    </div>
+</div>

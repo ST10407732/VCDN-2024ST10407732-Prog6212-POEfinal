@@ -38,6 +38,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/davyc/source/repos/ProgPoePart2_6212/ProgPoePart2_6212/Views/HRDashboard/GenerateReports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJEYXNoYm9hcmRcR2VuZXJhdGVSZXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/davyc/source/repos/ProgPoePart2_6212/ProgPoePart2_6212/Views/HRDashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJEYXNoYm9hcmRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/davyc/source/repos/ProgPoePart2_6212/ProgPoePart2_6212/Views/HRDashboard/ManageClaims.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJEYXNoYm9hcmRcTWFuYWdlQ2xhaW1zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/davyc/source/repos/ProgPoePart2_6212/ProgPoePart2_6212/Views/HRDashboard/ManageLecturers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJEYXNoYm9hcmRcTWFuYWdlTGVjdHVyZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/davyc/source/repos/ProgPoePart2_6212/ProgPoePart2_6212/Views/LecturerClaims/ClaimDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyZXJDbGFpbXNcQ2xhaW1EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

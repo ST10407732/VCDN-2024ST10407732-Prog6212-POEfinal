@@ -8,24 +8,24 @@
     <title>Submit Claim</title>
     <style>
         body {
-            background-color: #f5f5f5; /* Light grey background */
+            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
         }
 
         .container {
-            background-color: #d3b89f; /* Light brownish background for the form */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            background-color: #d3b89f;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 2rem;
             max-width: 600px;
-            margin: 2rem auto; /* Centering the container */
+            margin: 2rem auto;
         }
 
         h2 {
             margin-bottom: 1.5rem;
-            color: #333; /* Dark grey for the heading */
+            color: #333;
             text-align: center;
         }
 
@@ -50,7 +50,7 @@
         }
 
         .btn-primary {
-            background-color: #8c5e3c; /* Brownish button color */
+            background-color: #8c5e3c;
             border: none;
             color: white;
             padding: .5rem 1rem;
@@ -61,7 +61,7 @@
         }
 
             .btn-primary:hover {
-                background-color: #704c2f; /* Darker brown on hover */
+                background-color: #704c2f;
             }
 
         .text-danger {
@@ -92,46 +92,101 @@
             text-decoration: none;
         }
     </style>
+
+    <script>
+        // Function to calculate the total amount based on hours worked and hourly rate
+        function calculateTotalAmount() {
+            var hoursWorked = parseFloat(document.getElementById("HoursWorked").value);
+            var hourlyRate = parseFloat(document.getElementById("HourlyRate").value);
+            var totalAmount = hoursWorked * hourlyRate;
+
+            // Only update if the values are valid (hoursWorked and hourlyRate should be positive numbers)
+            if (!isNaN(totalAmount) && totalAmount > 0) {
+                document.getElementById("TotalAmount").value = totalAmount.toFixed(2);
+            } else {
+                document.getElementById("TotalAmount").value = '';
+            }
+        }
+
+        // Client-side validation for HoursWorked and HourlyRate
+        function validateForm() {
+            var hoursWorked = document.getElementById("HoursWorked").value;
+            var hourlyRate = document.getElementById("HourlyRate").value;
+
+            // Check if the hours worked and hourly rate are greater than 0
+            if (hoursWorked <= 0 || hourlyRate <= 0 || isNaN(hoursWorked) || isNaN(hourlyRate)) {
+                alert("Please enter valid positive values for Hours Worked and Hourly Rate.");
+                return false;
+            }
+
+            // Validate that the total amount is greater than 0
+            var totalAmount = document.getElementById("TotalAmount").value;
+            if (totalAmount <= 0) {
+                alert("Total amount must be greater than 0.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
 </head>
 <body>
     <div class="container">
         <h2>Submit Claim</h2>
 
-        <form asp-action="SubmitClaim" method="post" enctype="multipart/form-data">
+        <form asp-action="SubmitClaim" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
             @Html.AntiForgeryToken()
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Lecturer Name Input (Assuming this is handled by Identity or previous logic) -->
+     
             <div class="form-group">
-                <label asp-for="Name"></label>
-                <textarea asp-for="Name" class="form-control"></textarea>
+                <label asp-for="Name">Lecturer Name</label>
+                <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
+
+
+            <!-- Hours Worked Input with Client-side Calculation -->
             <div class="form-group">
-                <label asp-for="HoursWorked"></label>
-                <input asp-for="HoursWorked" class="form-control" />
+                <label asp-for="HoursWorked">Hours Worked</label>
+                <input asp-for="HoursWorked" class="form-control" id="HoursWorked" oninput="calculateTotalAmount()" />
                 <span asp-validation-for="HoursWorked" class="text-danger"></span>
             </div>
 
+            <!-- Hourly Rate Input with Client-side Calculation -->
             <div class="form-group">
-                <label asp-for="HourlyRate"></label>
-                <input asp-for="HourlyRate" class="form-control" />
+                <label asp-for="HourlyRate">Hourly Rate</label>
+                <input asp-for="HourlyRate" class="form-control" id="HourlyRate" oninput="calculateTotalAmount()" />
                 <span asp-validation-for="HourlyRate" class="text-danger"></span>
             </div>
 
+            <!-- Total Amount Display (Auto-calculated) -->
+            <div class="form-group">
+                <label for="TotalAmount">Total Amount</label>
+                <input type="text" id="TotalAmount" class="form-control" readonly />
+            </div>
+
+            <!-- Notes (Optional Field) -->
             <div class="form-group">
                 <label asp-for="Notes"></label>
                 <textarea asp-for="Notes" class="form-control"></textarea>
                 <span asp-validation-for="Notes" class="text-danger"></span>
             </div>
 
+            <!-- Supporting Document Upload (Optional) -->
             <div class="form-group">
                 <label for="DocumentUpload">Upload Supporting Document (optional)</label>
                 <input type="file" name="DocumentUpload" class="form-control" />
             </div>
 
+            <!-- Submit Button -->
             <button type="submit" class="btn-primary">Submit Claim</button>
         </form>
 
+        <!-- Link to Upload Document Later -->
         <div class="mt-3">
             <p>If you don't upload a document now, you can upload it later:</p>
             <a asp-action="UploadDocument" class="btn-secondary">Upload Document Later</a>

@@ -28,6 +28,7 @@ namespace ProgPoePart2_6212.Controllers
                 ViewData["isCoordinator"] = roles.Contains("Coordinator");
                 ViewData["isManager"] = roles.Contains("Manager");
                 ViewData["isLecturer"] = roles.Contains("Lecturer");
+                ViewData["isHR"] = roles.Contains("HR");
             }
 
             return View();

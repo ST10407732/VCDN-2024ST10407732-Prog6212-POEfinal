@@ -1,0 +1,403 @@
+-- QUESTION 1
+CREATE USER C##charity4africa IDENTIFIED BY Charity4 ;
+GRANT ALL PRIVILEGES TO C##charity4africa;
+
+
+-- Create Customers Table
+CREATE TABLE CUSTOMER (
+    CUSTOMER_ID NUMBER PRIMARY KEY,
+    FIRST_NAME VARCHAR2(50),
+    SURNAME VARCHAR2(50),
+    ADDRESS VARCHAR2(100),
+    CONTACT_NUMBER VARCHAR2(15),
+    EMAIL VARCHAR2(50)
+);
+
+-- Create Employees Table
+CREATE TABLE EMPLOYEE (
+    EMPLOYEE_ID VARCHAR2(10) PRIMARY KEY,
+    FIRST_NAME VARCHAR2(50),
+    SURNAME VARCHAR2(50),
+    CONTACT_NUMBER VARCHAR2(15),
+    ADDRESS VARCHAR2(100),
+    EMAIL VARCHAR2(50)
+);
+
+-- Create Donators Table
+CREATE TABLE DONATOR (
+    DONATOR_ID NUMBER PRIMARY KEY,
+    FIRST_NAME VARCHAR2(50),
+    SURNAME VARCHAR2(50),
+    CONTACT_NUMBER VARCHAR2(15),
+    EMAIL VARCHAR2(50)
+);
+
+-- Create Donations Table
+CREATE TABLE DONATION (
+    DONATION_ID NUMBER PRIMARY KEY,
+    DONATOR_ID NUMBER,
+    DONATION VARCHAR2(100),
+    PRICE NUMBER(10, 2),
+    DONATION_DATE DATE,
+    FOREIGN KEY (DONATOR_ID) REFERENCES Donator(DONATOR_ID)
+);
+
+-- Create Deliveries Table
+CREATE TABLE DELIVERY (
+    DELIVERY_ID NUMBER PRIMARY KEY,
+    DELIVERY_NOTES VARCHAR2(255),
+    DISPATCH_DATE DATE,
+    DELIVERY_DATE DATE
+);
+
+-- Create Returns Table
+CREATE TABLE RETURNS (
+    RETURN_ID VARCHAR2(10) PRIMARY KEY,
+    RETURN_DATE DATE,
+    REASON VARCHAR2(255),
+    CUSTOMER_ID NUMBER,
+    DONATION_ID NUMBER,
+    EMPLOYEE_ID VARCHAR2(10),
+    FOREIGN KEY (CUSTOMER_ID) REFERENCES Customer(CUSTOMER_ID),
+    FOREIGN KEY (DONATION_ID) REFERENCES Donation(DONATION_ID),
+    FOREIGN KEY (EMPLOYEE_ID) REFERENCES Employee(EMPLOYEE_ID)
+);
+
+-- Create Invoices Table
+CREATE TABLE INVOICE (
+    INVOICE_NUM NUMBER PRIMARY KEY,
+    CUSTOMER_ID NUMBER,
+    INVOICE_DATE DATE,
+    EMPLOYEE_ID VARCHAR2(10),
+    DONATION_ID NUMBER,
+    DELIVERY_ID NUMBER,
+    FOREIGN KEY (CUSTOMER_ID) REFERENCES Customer(CUSTOMER_ID),
+    FOREIGN KEY (EMPLOYEE_ID) REFERENCES Employee(EMPLOYEE_ID),
+    FOREIGN KEY (DONATION_ID) REFERENCES Donation(DONATION_ID),
+    FOREIGN KEY (DELIVERY_ID) REFERENCES Delivery(DELIVERY_ID)
+);
+
+
+-- Inserting into Customer table
+INSERT INTO Customer (CUSTOMER_ID, FIRST_NAME, SURNAME, ADDRESS, CONTACT_NUMBER, EMAIL) 
+VALUES (11011, 'Jack', 'Smith', '18 Water Rd', '0877277521', 'jsmith@isat.com');
+INSERT INTO Customer (CUSTOMER_ID, FIRST_NAME, SURNAME, ADDRESS, CONTACT_NUMBER, EMAIL) 
+VALUES (11012, 'Pat', 'Hendricks', '22 Water Rd', '0863257857', 'ph@mcom.co.za');
+INSERT INTO Customer (CUSTOMER_ID, FIRST_NAME, SURNAME, ADDRESS, CONTACT_NUMBER, EMAIL) 
+VALUES (11013, 'Andre', 'Clark', '101 Summer Lane', '0834567891', 'aclark@mcom.co.za');
+INSERT INTO Customer (CUSTOMER_ID, FIRST_NAME, SURNAME, ADDRESS, CONTACT_NUMBER, EMAIL) 
+VALUES (11014, 'Kevin', 'Jones', '55 Mountain Way', '0612547895', 'kj@isat.co.za');
+INSERT INTO Customer (CUSTOMER_ID, FIRST_NAME, SURNAME, ADDRESS, CONTACT_NUMBER, EMAIL) 
+VALUES (11015, 'Lucy', 'Williams', '5 Main Rd', '0827238521', 'Iw@mcal.co.za');
+
+-- Inserting into Employee table
+INSERT INTO Employee (EMPLOYEE_ID, FIRST_NAME, SURNAME, CONTACT_NUMBER, ADDRESS, EMAIL) 
+VALUES ('emp101', 'Jeff', 'Davis', '0877277521', '10 Main Road', 'jand@isat.com');
+INSERT INTO Employee (EMPLOYEE_ID, FIRST_NAME, SURNAME, CONTACT_NUMBER, ADDRESS, EMAIL) 
+VALUES ('emp102', 'Kevin', 'Marks', '0837377522', '18 Water Road', 'km@isat.com');
+INSERT INTO Employee (EMPLOYEE_ID, FIRST_NAME, SURNAME, CONTACT_NUMBER, ADDRESS, EMAIL) 
+VALUES ('emp103', 'Adanya', 'Andrews', '0817117523', '21 Circle Lane', 'aa@isat.com');
+INSERT INTO Employee (EMPLOYEE_ID, FIRST_NAME, SURNAME, CONTACT_NUMBER, ADDRESS, EMAIL) 
+VALUES ('emp104', 'Adebayo', 'Dryer', '0797215244', '1 Sea Road', 'aryer@isat.com');
+INSERT INTO Employee (EMPLOYEE_ID, FIRST_NAME, SURNAME, CONTACT_NUMBER, ADDRESS, EMAIL) 
+VALUES ('emp105', 'Xolani', 'Samson', '0827122255', '12 Main Road', 'xosam@isat.com');
+
+-- Inserting into Donator table
+INSERT INTO Donator (DONATOR_ID, FIRST_NAME, SURNAME, CONTACT_NUMBER, EMAIL) 
+VALUES (20111, 'Jeff', 'Watson', '0827172250', 'jwatson@ymail.com');
+INSERT INTO Donator (DONATOR_ID, FIRST_NAME, SURNAME, CONTACT_NUMBER, EMAIL) 
+VALUES (20112, 'Stephen', 'Jones', '0837865670', 'joness@ymail.com');
+INSERT INTO Donator (DONATOR_ID, FIRST_NAME, SURNAME, CONTACT_NUMBER, EMAIL) 
+VALUES (20113, 'James', 'Joe', '0878978650', '_@isat.com');
+INSERT INTO Donator (DONATOR_ID, FIRST_NAME, SURNAME, CONTACT_NUMBER, EMAIL) 
+VALUES (20114, 'Kelly', 'Ross', '0826575650', 'kross@gsat.com');
+INSERT INTO Donator (DONATOR_ID, FIRST_NAME, SURNAME, CONTACT_NUMBER, EMAIL) 
+VALUES (20115, 'Abraham', 'Clark', '0797656430', 'aclark@ymail.com');
+
+-- Inserting into Donation table
+INSERT INTO Donation (DONATION_ID, DONATOR_ID, DONATION, PRICE, DONATION_DATE) 
+VALUES (7111, 20111, 'KIC Fridge', 599, TO_DATE('01-MAY-2024', 'DD-MON-YYYY'));
+INSERT INTO Donation (DONATION_ID, DONATOR_ID, DONATION, PRICE, DONATION_DATE) 
+VALUES (7112, 20112, 'Samsung 42inch LCD', 1299, TO_DATE('03-MAY-2024', 'DD-MON-YYYY'));
+INSERT INTO Donation (DONATION_ID, DONATOR_ID, DONATION, PRICE, DONATION_DATE) 
+VALUES (7113, 20113, 'Sharp Microwave', 1599, TO_DATE('03-MAY-2024', 'DD-MON-YYYY'));
+INSERT INTO Donation (DONATION_ID, DONATOR_ID, DONATION, PRICE, DONATION_DATE) 
+VALUES (7114, 20115, '6 Seat Dining room table', 799, TO_DATE('05-MAY-2024', 'DD-MON-YYYY'));
+INSERT INTO Donation (DONATION_ID, DONATOR_ID, DONATION, PRICE, DONATION_DATE) 
+VALUES (7115, 20114, 'Lazyboy Sofa', 1199, TO_DATE('07-MAY-2024', 'DD-MON-YYYY'));
+INSERT INTO Donation (DONATION_ID, DONATOR_ID, DONATION, PRICE, DONATION_DATE) 
+VALUES (7116, 20113, 'JVC Surround Sound System', 179, TO_DATE('09-MAY-2024', 'DD-MON-YYYY'));
+
+-- Inserting into Delivery table
+INSERT INTO Delivery (DELIVERY_ID, DELIVERY_NOTES, DISPATCH_DATE, DELIVERY_DATE) 
+VALUES (511, 'Double packaging requested', TO_DATE('10-MAY-2024', 'DD-MON-YYYY'), TO_DATE('15-MAY-2024', 'DD-MON-YYYY'));
+INSERT INTO Delivery (DELIVERY_ID, DELIVERY_NOTES, DISPATCH_DATE, DELIVERY_DATE) 
+VALUES (512, 'Delivery to work address', TO_DATE('12-MAY-2024', 'DD-MON-YYYY'), TO_DATE('15-MAY-2024', 'DD-MON-YYYY'));
+INSERT INTO Delivery (DELIVERY_ID, DELIVERY_NOTES, DISPATCH_DATE, DELIVERY_DATE) 
+VALUES (513, 'Signature required', TO_DATE('12-MAY-2024', 'DD-MON-YYYY'), TO_DATE('17-MAY-2024', 'DD-MON-YYYY'));
+INSERT INTO Delivery (DELIVERY_ID, DELIVERY_NOTES, DISPATCH_DATE, DELIVERY_DATE) 
+VALUES (514, 'No notes', TO_DATE('12-MAY-2024', 'DD-MON-YYYY'), TO_DATE('15-MAY-2024', 'DD-MON-YYYY'));
+INSERT INTO Delivery (DELIVERY_ID, DELIVERY_NOTES, DISPATCH_DATE, DELIVERY_DATE) 
+VALUES (515, 'Birthday present wrapping required', TO_DATE('18-MAY-2024', 'DD-MON-YYYY'), TO_DATE('19-MAY-2024', 'DD-MON-YYYY'));
+INSERT INTO Delivery (DELIVERY_ID, DELIVERY_NOTES, DISPATCH_DATE, DELIVERY_DATE) 
+VALUES (516, 'Delivery to work address', TO_DATE('20-MAY-2024', 'DD-MON-YYYY'), TO_DATE('25-MAY-2024', 'DD-MON-YYYY'));
+
+-- Inserting into Returns table
+INSERT INTO Returns (RETURN_ID, RETURN_DATE, REASON, CUSTOMER_ID, DONATION_ID, EMPLOYEE_ID) 
+VALUES ('ret001', TO_DATE('25-MAY-2024', 'DD-MON-YYYY'), 'Customer not satisfied with product', 11011, 7116, 'emp101');
+INSERT INTO Returns (RETURN_ID, RETURN_DATE, REASON, CUSTOMER_ID, DONATION_ID, EMPLOYEE_ID) 
+VALUES ('ret002', TO_DATE('25-MAY-2024', 'DD-MON-YYYY'), 'Product had broken section', 11013, 7114, 'emp103');
+
+-- Inserting into Invoice table
+INSERT INTO Invoice (INVOICE_NUM, CUSTOMER_ID, INVOICE_DATE, EMPLOYEE_ID, DONATION_ID, DELIVERY_ID) 
+VALUES (8111, 11011, TO_DATE('15-MAY-2024', 'DD-MON-YYYY'), 'emp103', 7111, 511);
+INSERT INTO Invoice (INVOICE_NUM, CUSTOMER_ID, INVOICE_DATE, EMPLOYEE_ID, DONATION_ID, DELIVERY_ID) 
+VALUES (8112, 11013, TO_DATE('15-MAY-2024', 'DD-MON-YYYY'), 'emp101', 7114, 512);
+INSERT INTO Invoice (INVOICE_NUM, CUSTOMER_ID, INVOICE_DATE, EMPLOYEE_ID, DONATION_ID, DELIVERY_ID) 
+VALUES (8113, 11012, TO_DATE('17-MAY-2024', 'DD-MON-YYYY'), 'emp101', 7112, 513);
+INSERT INTO Invoice (INVOICE_NUM, CUSTOMER_ID, INVOICE_DATE, EMPLOYEE_ID, DONATION_ID, DELIVERY_ID) 
+VALUES (8114, 11015, TO_DATE('17-MAY-2024', 'DD-MON-YYYY'), 'emp102', 7113, 514);
+INSERT INTO Invoice (INVOICE_NUM, CUSTOMER_ID, INVOICE_DATE, EMPLOYEE_ID, DONATION_ID, DELIVERY_ID) 
+VALUES (8115, 11011, TO_DATE('17-MAY-2024', 'DD-MON-YYYY'), 'emp102', 7115, 515);
+INSERT INTO Invoice (INVOICE_NUM, CUSTOMER_ID, INVOICE_DATE, EMPLOYEE_ID, DONATION_ID, DELIVERY_ID) 
+VALUES (8116, 11015, TO_DATE('18-MAY-2024', 'DD-MON-YYYY'), 'emp103', 7116, 516);
+
+SELECT * FROM DONATOR;
+-- QUESTION 2
+SELECT 
+    c.FIRST_NAME || ', ' || c.SURNAME AS CUSTOMER,
+    i.EMPLOYEE_ID,
+    d.DELIVERY_NOTES,
+    don.DONATION AS DONATION,
+    i.INVOICE_NUM,
+   TO_CHAR(i.INVOICE_DATE, 'DD/MM/YYYY') AS INVOICE_DATE
+FROM 
+    Invoice i
+JOIN 
+    Customer c ON i.CUSTOMER_ID = c.CUSTOMER_ID
+JOIN 
+    Delivery d ON i.DELIVERY_ID = d.DELIVERY_ID
+JOIN 
+    Donation don ON i.DONATION_ID = don.DONATION_ID
+WHERE 
+    i.INVOICE_DATE > TO_DATE('16/MAY/2024', 'DD/MON/YYYY');
+    
+    
+-- QUESTION 3
+
+-- The use of a sequence ensures that each funding_id is automatically generated and unique for every new record inserted (The IIE, 2024). 
+-- This approach eliminates the risk of duplication, maintains data integrity, 
+-- and simplifies the insertion process by removing the need to manually assign IDs.
+-- Create Sequence for Funding IDs
+CREATE SEQUENCE funding_seq
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE
+NOCYCLE;
+
+-- Create Funding Table
+CREATE TABLE Funding (
+    funding_id NUMBER DEFAULT funding_seq.NEXTVAL PRIMARY KEY,
+    funder VARCHAR2(50),
+    funding_amount NUMBER
+);
+
+-- Inserting a record into Funding Table
+INSERT INTO Funding (funder, funding_amount) VALUES ('John Doe', 5000);
+SELECT * FROM FUNDING;
+
+-- QUESTION 4
+SET SERVEROUTPUT ON;
+
+DECLARE
+    -- Define a cursor to fetch the required data
+    CURSOR cur_returns IS
+        SELECT c.FIRST_NAME || ', ' || c.SURNAME AS customer_name,
+               d.DONATION AS donation_purchased,
+               d.PRICE AS price,
+               r.REASON AS return_reason
+        FROM Returns r -- Use schema name if needed
+        JOIN Customer c ON r.CUSTOMER_ID = c.CUSTOMER_ID 
+        JOIN Donation d ON r.DONATION_ID = d.DONATION_ID; 
+
+BEGIN
+    -- Loop through the cursor and output the results
+    FOR rec IN cur_returns LOOP
+        dbms_output.put_line('CUSTOMER:          ' || rec.customer_name);
+        dbms_output.put_line('DONATION PURCHASED: ' || rec.donation_purchased);
+        dbms_output.put_line('PRICE:             ' || rec.price);
+        dbms_output.put_line('RETURN REASON:     ' || rec.return_reason);
+        dbms_output.put_line('--------------------------------------------------------------------------------------');
+    END LOOP;
+END;
+/
+
+
+-- QUESTION 5
+SET SERVEROUTPUT ON;
+DECLARE
+    -- Define a cursor to fetch the required data including deliveries
+    CURSOR cur_delivery IS
+        SELECT c.FIRST_NAME || ', ' || c.SURNAME AS customer_name,
+               e.FIRST_NAME || ', ' || e.SURNAME AS employee_name,
+               d.DONATION AS donation,
+               del.DISPATCH_DATE AS dispatch_date,
+               del.DELIVERY_DATE AS delivery_date,
+               TRUNC(del.DELIVERY_DATE - del.DISPATCH_DATE) AS days_to_delivery
+        FROM Invoice inv  -- No schema name
+        JOIN Customer c ON inv.CUSTOMER_ID = c.CUSTOMER_ID -- No schema name
+        JOIN Donation d ON inv.DONATION_ID = d.DONATION_ID -- No schema name
+        JOIN Employee e ON inv.EMPLOYEE_ID = e.EMPLOYEE_ID -- No schema name
+        JOIN Delivery del ON inv.DELIVERY_ID = del.DELIVERY_ID -- No schema name
+        WHERE c.CUSTOMER_ID = 11011; -- Filter for the specific customer
+BEGIN
+    -- Loop through the cursor and output the results
+    FOR rec IN cur_delivery LOOP
+        dbms_output.put_line('CUSTOMER:          ' || rec.customer_name);
+        dbms_output.put_line('EMPLOYEE:          ' || rec.employee_name);
+        dbms_output.put_line('DONATION:          ' || rec.donation);
+        dbms_output.put_line('DISPATCH DATE:     ' || TO_CHAR(rec.dispatch_date, 'DD/MON/YY'));
+        dbms_output.put_line('DELIVERY DATE:     ' || TO_CHAR(rec.delivery_date, 'DD/MON/YY'));
+        dbms_output.put_line('DAYS TO DELIVERY:  ' || rec.days_to_delivery);
+        dbms_output.put_line('--------------------------------------------------------------------------------------');
+    END LOOP;
+END;
+/
+
+
+-- QUESTION 6
+SET SERVEROUTPUT ON;
+DECLARE
+    -- Cursor to fetch customer names and their total spent amount
+    CURSOR cur_customer_spending IS
+        SELECT c.FIRST_NAME,
+               c.SURNAME,
+               SUM(d.PRICE) AS total_spent
+        FROM Customer c
+        JOIN Invoice i ON c.CUSTOMER_ID = i.CUSTOMER_ID
+        JOIN Donation d ON i.DONATION_ID = d.DONATION_ID
+        GROUP BY c.FIRST_NAME, c.SURNAME;
+BEGIN
+    -- Loop through the cursor and output the results
+    FOR rec IN cur_customer_spending LOOP
+        -- Determine rating based on total spent
+        IF rec.total_spent >= 1500 THEN
+            dbms_output.put_line('FIRST NAME: ' || rec.FIRST_NAME);
+            dbms_output.put_line('SURNAME:    ' || rec.SURNAME);
+            dbms_output.put_line('AMOUNT:     R ' || rec.total_spent || ' (***)');
+        ELSE
+            dbms_output.put_line('FIRST NAME: ' || rec.FIRST_NAME);
+            dbms_output.put_line('SURNAME:    ' || rec.SURNAME);
+            dbms_output.put_line('AMOUNT:     R ' || rec.total_spent);
+        END IF;
+        dbms_output.put_line('--------------------------------------------------------------------------------------');
+    END LOOP;
+END;
+/
+
+
+-- QUESTION 7
+
+-- Q.7.1 %TYPE Attribute
+-- The %TYPE attribute is used to declare variables that inherit the data type from an existing database column.
+SET SERVEROUTPUT ON;
+
+DECLARE
+   -- Declaring a variable v_surname that has the same data type as employees.surname
+   v_surname employees.surname%TYPE;
+BEGIN
+   -- Assigning a value to the variable
+   SELECT surname INTO v_surname FROM employees WHERE employee_id = 101;
+
+   -- Displaying the last name
+   DBMS_OUTPUT.PUT_LINE('Employee Last Name: ' || v_surname);
+END;
+/
+
+
+
+
+-- Q.7.2 %ROWTYPE Attribute
+-- The %ROWTYPE attribute is used to declare a record that can hold an entire row of data from a table (The IIE, 2024).
+SET SERVEROUTPUT ON;
+DECLARE
+   -- Declare a record using the %ROWTYPE attribute to hold a full row of data
+   v_employee employee%ROWTYPE;
+BEGIN
+   -- Fetch the entire row for the employee with employee_id 101 into v_employee
+   SELECT * INTO v_employee FROM employee WHERE employee_id = 'emp101';
+
+   -- Display the employee's details
+   DBMS_OUTPUT.PUT_LINE('Employee ID: ' || v_employee.employee_id);
+   DBMS_OUTPUT.PUT_LINE('Surname: ' || v_employee.surname);
+   -- Add more fields if necessary depending on the actual table structure
+END;
+/
+
+-- Q7.3
+SET SERVEROUTPUT ON;
+-- Declare a user-defined exception for invalid contact number  (The IIE, 2024).
+DECLARE
+    -- Custom exception to handle cases when the contact number is invalid
+    contact_number_exception EXCEPTION;
+    -- Associate the custom exception with a specific error code (-20002)
+    PRAGMA EXCEPTION_INIT(contact_number_exception, -20002);  
+    -- Declare a variable to hold the employee's contact number
+    v_contact_number VARCHAR2(15);  
+BEGIN
+    -- Simulate the input of an employee contact number
+    -- Here, we assign a value of '12345678901' to simulate an invalid contact number (more than 10 digits)
+    v_contact_number := '12345678901';  
+    -- Check if the contact number exceeds the valid length of 10 digits
+    IF LENGTH(v_contact_number) > 10 THEN
+        -- If the contact number is invalid, raise the user-defined exception
+        RAISE contact_number_exception;  
+    ELSE
+        -- If the contact number is valid, display a message confirming the contact number
+        DBMS_OUTPUT.PUT_LINE('Contact number processed: ' || v_contact_number);
+    END IF;
+EXCEPTION
+    -- Catch the custom contact_number_exception that was raised in the BEGIN block
+    -- Display an error message indicating that the contact number is invalid
+    WHEN contact_number_exception THEN
+        DBMS_OUTPUT.PUT_LINE('Error: Contact number exceeds valid length of 10 digits.');
+END;
+/
+
+
+
+-- QUESTION 8
+
+SELECT 
+    C.FIRST_NAME, 
+    C.SURNAME, 
+    'R ' || SUM(D.PRICE) AS AMOUNT,
+    -- Use CASE statement to determine customer rating based on total amount spent
+    CASE 
+        WHEN SUM(D.PRICE) >= 1500 THEN '***'  -- 3-star rating for amount >= 1500
+        WHEN SUM(D.PRICE) BETWEEN 1000 AND 1400 THEN '**'  -- 2-star rating for amount between 1000 and 1400
+        ELSE '*'  -- 1-star rating for amount below 1000
+    END AS CUSTOMER_RATING
+FROM 
+    Customer C
+JOIN 
+    Invoice I ON C.CUSTOMER_ID = I.CUSTOMER_ID  -- Join Invoices table based on CUSTOMER_ID
+JOIN 
+    Donation D ON I.DONATION_ID = D.DONATION_ID  -- Join Donations table using DONATION_ID from Invoices
+GROUP BY 
+    C.FIRST_NAME, C.SURNAME
+ORDER BY 
+    SUM(D.PRICE) DESC;  -- Order by total amount spent in descending order
+
+
+
+
+
+
+
+
+
+
+
+
+v
