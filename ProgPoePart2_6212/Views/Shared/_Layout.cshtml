@@ -72,12 +72,12 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="ManagerClaims" asp-action="AllClaims">Approve Claims</a>
                             </li>
                         }
-                       @*   @if (User.IsInRole("HR"))
-                        { *@
+                         @if (User.IsInRole("HR"))
+                        {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="HRDashboard" asp-action="Index">HR Dashboard</a>
                             </li>
-               @*          } *@
+                      } 
                     </ul>
                 </div>
             </div>

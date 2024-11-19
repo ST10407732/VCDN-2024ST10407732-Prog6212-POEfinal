@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|c:\\users\\davyc\\source\\repos\\progpoepart2_6212\\progpoepart2_6212\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|c:\\users\\davyc\\source\\repos\\progpoepart2_6212\\progpoepart2_6212\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|c:\\users\\davyc\\source\\repos\\progpoepart2_6212\\progpoepart2_6212\\controllers\\hrcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\controllers\\hrcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|c:\\users\\davyc\\source\\repos\\progpoepart2_6212\\progpoepart2_6212\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|c:\\users\\davyc\\source\\repos\\progpoepart2_6212\\progpoepart2_6212\\controllers\\coordinatorclaimscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\controllers\\coordinatorclaimscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|c:\\users\\davyc\\source\\repos\\progpoepart2_6212\\progpoepart2_6212\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|c:\\users\\davyc\\source\\repos\\progpoepart2_6212\\progpoepart2_6212\\views\\hrdashboard\\generatereports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -51,14 +71,6 @@
       "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|c:\\users\\davyc\\source\\repos\\progpoepart2_6212\\progpoepart2_6212\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|c:\\users\\davyc\\source\\repos\\progpoepart2_6212\\progpoepart2_6212\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ProgPoePart2_6212Context_7c83b1df_a6ce_4031_8cb4_fbc7d2782022/True/SqlTable/dbo.Lecturer.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
@@ -84,10 +96,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|c:\\users\\davyc\\source\\repos\\progpoepart2_6212\\progpoepart2_6212\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|c:\\users\\davyc\\source\\repos\\progpoepart2_6212\\progpoepart2_6212\\controllers\\coordinatorclaimscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\controllers\\coordinatorclaimscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|c:\\users\\davyc\\source\\repos\\progpoepart2_6212\\progpoepart2_6212\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -138,16 +146,8 @@
       "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\views\\lecturerclaims\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|c:\\users\\davyc\\source\\repos\\progpoepart2_6212\\progpoepart2_6212\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|c:\\users\\davyc\\source\\repos\\progpoepart2_6212\\progpoepart2_6212\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|c:\\users\\davyc\\source\\repos\\progpoepart2_6212\\progpoepart2_6212\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|solutionrelative:progpoepart2_6212\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1F05562-0D06-47DA-A528-2CF1F2E7B40E}|ProgPoePart2_6212\\ProgPoePart2_6212.csproj|c:\\users\\davyc\\source\\repos\\progpoepart2_6212\\progpoepart2_6212\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -185,7 +185,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -193,56 +193,85 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "HrController.cs",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Controllers\\HrController.cs",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Controllers\\HrController.cs",
               "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Controllers\\HrController.cs",
               "RelativeToolTip": "ProgPoePart2_6212\\Controllers\\HrController.cs",
-              "ViewState": "AgIAABABAAAAAAAAAAAAwBgBAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T22:44:12.507Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GenerateReports.cshtml",
-              "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\HRDashboard\\GenerateReports.cshtml",
-              "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\HRDashboard\\GenerateReports.cshtml",
-              "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\HRDashboard\\GenerateReports.cshtml",
-              "RelativeToolTip": "ProgPoePart2_6212\\Views\\HRDashboard\\GenerateReports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-18T22:51:45.016Z"
+              "DocumentIndex": 4,
+              "Title": "CoordinatorClaimsController.cs",
+              "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Controllers\\CoordinatorClaimsController.cs",
+              "RelativeDocumentMoniker": "ProgPoePart2_6212\\Controllers\\CoordinatorClaimsController.cs",
+              "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Controllers\\CoordinatorClaimsController.cs",
+              "RelativeToolTip": "ProgPoePart2_6212\\Controllers\\CoordinatorClaimsController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAiwJgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T11:40:50.243Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ManageLecturers.cshtml",
-              "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\HRDashboard\\ManageLecturers.cshtml",
-              "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\HRDashboard\\ManageLecturers.cshtml",
-              "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\HRDashboard\\ManageLecturers.cshtml",
-              "RelativeToolTip": "ProgPoePart2_6212\\Views\\HRDashboard\\ManageLecturers.cshtml",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAAAE0AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-18T22:50:46.97Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LecturerClaim.cs",
-              "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Models\\LecturerClaim.cs",
-              "RelativeDocumentMoniker": "ProgPoePart2_6212\\Models\\LecturerClaim.cs",
-              "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Models\\LecturerClaim.cs",
-              "RelativeToolTip": "ProgPoePart2_6212\\Models\\LecturerClaim.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAuwBkAAAABAAAAAAAAAA==",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "ProgPoePart2_6212\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "ProgPoePart2_6212\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwB4AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T18:02:41.971Z"
+              "WhenOpened": "2024-10-17T20:37:29.053Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\appsettings.json",
+              "RelativeDocumentMoniker": "ProgPoePart2_6212\\appsettings.json",
+              "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\appsettings.json",
+              "RelativeToolTip": "ProgPoePart2_6212\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-09T17:21:01.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ProgPoePart2_6212\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAIwE8AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T13:07:14.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "ProgPoePart2_6212\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "ProgPoePart2_6212\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwGwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T19:56:24.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ManageClaims.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\HRDashboard\\ManageClaims.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\HRDashboard\\ManageClaims.cshtml",
@@ -254,7 +283,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
+              "Title": "LecturerClaim.cs",
+              "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Models\\LecturerClaim.cs",
+              "RelativeDocumentMoniker": "ProgPoePart2_6212\\Models\\LecturerClaim.cs",
+              "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Models\\LecturerClaim.cs",
+              "RelativeToolTip": "ProgPoePart2_6212\\Models\\LecturerClaim.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAuwBkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T18:02:41.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ManageLecturers.cshtml",
+              "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\HRDashboard\\ManageLecturers.cshtml",
+              "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\HRDashboard\\ManageLecturers.cshtml",
+              "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\HRDashboard\\ManageLecturers.cshtml",
+              "RelativeToolTip": "ProgPoePart2_6212\\Views\\HRDashboard\\ManageLecturers.cshtml",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAAAE0AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-18T22:50:46.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GenerateReports.cshtml",
+              "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\HRDashboard\\GenerateReports.cshtml",
+              "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\HRDashboard\\GenerateReports.cshtml",
+              "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\HRDashboard\\GenerateReports.cshtml",
+              "RelativeToolTip": "ProgPoePart2_6212\\Views\\HRDashboard\\GenerateReports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-18T22:51:45.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\HRDashboard\\Index.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\HRDashboard\\Index.cshtml",
@@ -266,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "PendingClaims.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\ManagerClaims\\PendingClaims.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\ManagerClaims\\PendingClaims.cshtml",
@@ -278,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "20241017183319_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Migrations\\20241017183319_InitialCreate.cs",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Migrations\\20241017183319_InitialCreate.cs",
@@ -290,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "ProgPoePart2_6212Context.cs",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Data\\ProgPoePart2_6212Context.cs",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Data\\ProgPoePart2_6212Context.cs",
@@ -302,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "ProgPoePart2_6212ContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Migrations\\ProgPoePart2_6212ContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Migrations\\ProgPoePart2_6212ContextModelSnapshot.cs",
@@ -314,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "SeedData.cs",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Data\\SeedData.cs",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Data\\SeedData.cs",
@@ -326,19 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "ProgPoePart2_6212\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "ProgPoePart2_6212\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwB4AAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T20:37:29.053Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "20241118141218_roles.cs",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Migrations\\20241118141218_roles.cs",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Migrations\\20241118141218_roles.cs",
@@ -350,19 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "ProgPoePart2_6212\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAADYAAAAAAAAAAAAIwE8AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T13:07:14.441Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "ManagerClaimsController.cs",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Controllers\\ManagerClaimsController.cs",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Controllers\\ManagerClaimsController.cs",
@@ -374,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "dbo.Lecturer.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ProgPoePart2_6212Context_7c83b1df_a6ce_4031_8cb4_fbc7d2782022/True/SqlTable/dbo.Lecturer.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ProgPoePart2_6212Context_7c83b1df_a6ce_4031_8cb4_fbc7d2782022/True/SqlTable/dbo.Lecturer.sql",
@@ -383,7 +424,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Program.cs",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Program.cs",
@@ -395,7 +436,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "ProgPoePart2_6212.Tests.csproj",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212.Tests\\ProgPoePart2_6212.Tests.csproj",
               "RelativeDocumentMoniker": "ProgPoePart2_6212.Tests\\ProgPoePart2_6212.Tests.csproj",
@@ -407,7 +448,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\_ViewImports.cshtml",
@@ -419,7 +460,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Models\\User.cs",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Models\\User.cs",
@@ -431,7 +472,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "LecturerClaimsController.cs",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Controllers\\LecturerClaimsController.cs",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Controllers\\LecturerClaimsController.cs",
@@ -443,19 +484,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "CoordinatorClaimsController.cs",
-              "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Controllers\\CoordinatorClaimsController.cs",
-              "RelativeDocumentMoniker": "ProgPoePart2_6212\\Controllers\\CoordinatorClaimsController.cs",
-              "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Controllers\\CoordinatorClaimsController.cs",
-              "RelativeToolTip": "ProgPoePart2_6212\\Controllers\\CoordinatorClaimsController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAiwJgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T11:40:50.243Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "EmailSender.cs",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Services\\EmailSender.cs",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Services\\EmailSender.cs",
@@ -467,7 +496,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "IEmailSender.cs",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Services\\IEmailSender.cs",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Services\\IEmailSender.cs",
@@ -479,7 +508,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "PendingClaims.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\CoordinatorClaims\\PendingClaims.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\CoordinatorClaims\\PendingClaims.cshtml",
@@ -491,7 +520,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "LecturerClaimValidator.cs",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Validators\\LecturerClaimValidator.cs",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Validators\\LecturerClaimValidator.cs",
@@ -503,7 +532,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "bootstrap.esm.js",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
@@ -515,7 +544,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "ProgPoePart2_6212.csproj",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\ProgPoePart2_6212.csproj",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\ProgPoePart2_6212.csproj",
@@ -527,7 +556,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "SubmitClaim.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\LecturerClaims\\SubmitClaim.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\LecturerClaims\\SubmitClaim.cshtml",
@@ -539,7 +568,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "TrackClaim.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\LecturerClaims\\TrackClaim.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\LecturerClaims\\TrackClaim.cshtml",
@@ -551,7 +580,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "UploadDocument.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\LecturerClaims\\UploadDocument.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\LecturerClaims\\UploadDocument.cshtml",
@@ -563,7 +592,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "TrackClaims.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\LecturerClaims\\TrackClaims.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\LecturerClaims\\TrackClaims.cshtml",
@@ -575,7 +604,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "ClaimDetails.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\LecturerClaims\\ClaimDetails.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\LecturerClaims\\ClaimDetails.cshtml",
@@ -587,7 +616,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Views\\LecturerClaims\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Views\\LecturerClaims\\Dashboard.cshtml",
@@ -599,19 +628,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "ProgPoePart2_6212\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "ProgPoePart2_6212\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAIwGwAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T19:56:24.922Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "ProgPoePart2_6212\\Models\\ErrorViewModel.cs",
@@ -620,18 +637,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-09T19:09:27.593Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\appsettings.json",
-              "RelativeDocumentMoniker": "ProgPoePart2_6212\\appsettings.json",
-              "ToolTip": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\appsettings.json",
-              "RelativeToolTip": "ProgPoePart2_6212\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-09T17:21:01.595Z"
             },
             {
               "$type": "Document",

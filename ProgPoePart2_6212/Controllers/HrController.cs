@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProgPoePart2_6212.Controllers
 {
-  // [Authorize(Roles = "HR")]
+   [Authorize(Roles = "HR")]
     public class HRDashboardController : Controller
     {
         private readonly ProgPoePart2_6212Context _context;
