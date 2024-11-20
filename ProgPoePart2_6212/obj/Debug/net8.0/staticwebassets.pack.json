@@ -309,6 +309,10 @@
       "PackagePath": "staticwebassets\\reports\\Claim_Lindo Moyana_20241120204923.pdf"
     },
     {
+      "Id": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\wwwroot\\reports\\Claim_Lindo Moyana_20241120231237.pdf",
+      "PackagePath": "staticwebassets\\reports\\Claim_Lindo Moyana_20241120231237.pdf"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ProgPoePart2_6212.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
