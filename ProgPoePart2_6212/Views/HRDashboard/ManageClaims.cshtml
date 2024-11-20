@@ -1,4 +1,5 @@
-﻿@using ProgPoePart2_6212.Models
+﻿@model IEnumerable<ProgPoePart2_6212.Models.LecturerClaim>
+
 @{
     ViewData["Title"] = "Manage Claims";
 }
@@ -14,6 +15,7 @@
                 <th>Hours Worked</th>
                 <th>Hourly Rate</th>
                 <th>Status</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -25,12 +27,16 @@
                     <td>@claim.HoursWorked</td>
                     <td>@claim.HourlyRate.ToString("C")</td>
                     <td>@claim.Status</td>
+                    <td>
+                        <form asp-action="DeleteClaim" method="post" style="display:inline">
+                            <input type="hidden" name="claimId" value="@claim.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
-    <button type="submit" name="action" value="approve" class="btn btn-success">Approve Selected</button>
-    <button type="submit" name="action" value="reject" class="btn btn-danger">Reject Selected</button>
+   @*  <button type="submit" name="action" value="approve" class="btn btn-success">Approve Selected</button>
+    <button type="submit" name="action" value="reject" class="btn btn-danger">Reject Selected</button> *@
 </form>
-
-</div>

@@ -4,6 +4,17 @@
     <a asp-action="DownloadExcelReport" class="btn btn-success">Download Excel</a>
 </div>
 
+<div class="summary-section">
+    <h3>Summary</h3>
+    <ul>
+        <li><strong>Total Claims:</strong> @Model.TotalClaims</li>
+        <li><strong>Total Amount Claimed:</strong> @Model.TotalAmountClaimed.ToString("C")</li>
+        <li><strong>Average Claim Amount:</strong> @Model.AverageClaim.ToString("C")</li>
+        <li><strong>Highest Claim Amount:</strong> @Model.HighestClaim.ToString("C")</li>
+        <li><strong>Lowest Claim Amount:</strong> @Model.LowestClaim.ToString("C")</li>
+    </ul>
+</div>
+
 <table class="table">
     <thead>
         <tr>
@@ -15,13 +26,14 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var claim in Model)
+        @foreach (var claim in Model.Claims)
         {
             <tr>
-                <td>@claim.Name</td>
+                <td>@claim.User.FullName</td>
                 <td>@claim.HoursWorked</td>
                 <td>@claim.HourlyRate.ToString("C")</td>
-                <td>@(claim.HoursWorked * claim.HourlyRate).ToString("C")</td>
+                <td>@(claim.HoursWorked * claim.HourlyRate)</td>
+                @(claim.HoursWorked * claim.HourlyRate).ToString("C")
                 <td>@claim.Notes</td>
             </tr>
         }

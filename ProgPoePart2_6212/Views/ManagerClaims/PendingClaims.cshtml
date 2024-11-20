@@ -3,53 +3,64 @@
 <h2>All Claims</h2>
 
 <h3>Claims Pending for Approval</h3>
-<table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>Lecturer</th>
-            <th>Hours Worked</th>
-            <th>Hourly Rate</th>
-            <th>Status</th>
-            <th>Documents</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var claim in Model.Where(c => c.Status == ClaimStatus.PendingApproval))
-        {
+<form asp-action="BulkApproveClaims" method="post">
+    <table class="table table-striped table-bordered">
+        <thead>
             <tr>
-                <td>@claim.User?.FullName</td>
-                <td>@claim.HoursWorked</td>
-                <td>@claim.HourlyRate</td>
-                <td>@claim.Status</td>
-                <td>
-                    @if (claim.Documents != null && claim.Documents.Any())
-                    {
-                        <div class="document-list">
-                            @foreach (var document in claim.Documents)
-                            {
-                                <div class="document-item">
-                                    <a href="@Url.Content($"~/Uploads/{claim.Id}/{document.FileName}")" class="document-link">
-                                        @document.FileName
-                                    </a>
-                                    <span class="document-date"> - Uploaded on @document.UploadDate.ToShortDateString()</span>
-                                </div>
-                            }
-                        </div>
-                    }
-                    else
-                    {
-                        <span>No documents uploaded.</span>
-                    }
-                </td>
-                <td>
-                    <a asp-action="ApproveClaim" asp-route-id="@claim.Id" class="btn btn-success">Approve</a>
-                    <a asp-action="RejectClaim" asp-route-id="@claim.Id" class="btn btn-danger">Reject</a>
-                </td>
+                <th>Select</th>
+                <th>Lecturer</th>
+                <th>Hours Worked</th>
+                <th>Hourly Rate</th>
+                <th>Status</th>
+                <th>Documents</th>
+                <th>Actions</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var claim in Model.Where(c => c.Status == ClaimStatus.PendingApproval))
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" name="selectedClaims" value="@claim.Id" />
+                    </td>
+                    <td>@claim.User?.FullName</td>
+                    <td>@claim.HoursWorked</td>
+                    <td>@claim.HourlyRate</td>
+                    <td>@claim.Status</td>
+                    <td>
+                        @if (claim.Documents != null && claim.Documents.Any())
+                        {
+                            <div class="document-list">
+                                @foreach (var document in claim.Documents)
+                                {
+                                    <div class="document-item">
+                                        <a href="@Url.Content($"~/Uploads/{claim.Id}/{document.FileName}")" class="document-link">
+                                            @document.FileName
+                                        </a>
+                                        <span class="document-date"> - Uploaded on @document.UploadDate.ToShortDateString()</span>
+                                    </div>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            <span>No documents uploaded.</span>
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="ApproveClaim" asp-route-id="@claim.Id" class="btn btn-success">Approve</a>
+                        <a asp-action="RejectClaim" asp-route-id="@claim.Id" class="btn btn-danger">Reject</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <button type="submit" class="btn btn-primary">Bulk Approve</button>
+</form>
+
+<!-- Other sections remain unchanged -->
+
 
 <h3>Approved Claims</h3>
 <table class="table table-striped table-bordered">

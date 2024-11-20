@@ -33,9 +33,9 @@ namespace ProgPoePart2_6212.Controllers
         {
             return View();
         }
-
+      
         // GET: SubmitClaim
-     
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> SubmitClaim(LecturerClaim claim, IFormFile DocumentUpload)
@@ -252,8 +252,46 @@ namespace ProgPoePart2_6212.Controllers
             TempData["SuccessMessage"] = "Claim deleted successfully.";
             return RedirectToAction(nameof(Dashboard)); // Redirect to the dashboard
         }
+        // Action to handle resubmission logic
+        // This action handles both GET and POST for ResubmitClaim
+        [HttpGet]
+        public async Task<IActionResult> ResubmitClaim(int id)
+        {
+            var claim = await _context.LecturerClaims.FindAsync(id);
+            if (claim == null || claim.Status != ClaimStatus.Rejected)
+            {
+                return NotFound();
+            }
+            return View(claim);
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResubmitClaim(LecturerClaim updatedClaim)
+        {
+            try
+            {
+                var claim = await _context.LecturerClaims.FindAsync(updatedClaim.Id);
+                if (claim == null || claim.Status != ClaimStatus.Rejected)
+                {
+                    return NotFound();
+                }
 
+                claim.HoursWorked = updatedClaim.HoursWorked;
+                claim.HourlyRate = updatedClaim.HourlyRate;
+                claim.Notes = updatedClaim.Notes;
+                claim.Status = ClaimStatus.PendingApproval;
 
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(TrackClaims));
+            }
+            catch (Exception)
+            {
+                return View(updatedClaim);
+            }
+        }
     }
+
+
 }
+

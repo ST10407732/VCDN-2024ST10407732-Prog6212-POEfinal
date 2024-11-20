@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\Uploads\\1\\Checklist-Tourist.pdf"
     },
     {
+      "Id": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\wwwroot\\Uploads\\25\\CLDV ICETASK 1.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\25\\CLDV ICETASK 1.pdf"
+    },
+    {
       "Id": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\wwwroot\\Uploads\\2\\Checklist-Tourist.pdf",
       "PackagePath": "staticwebassets\\Uploads\\2\\Checklist-Tourist.pdf"
     },
@@ -275,6 +279,30 @@
     {
       "Id": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\wwwroot\\reports\\ClaimReport_24.pdf",
+      "PackagePath": "staticwebassets\\reports\\ClaimReport_24.pdf"
+    },
+    {
+      "Id": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\wwwroot\\reports\\ClaimReport_25.pdf",
+      "PackagePath": "staticwebassets\\reports\\ClaimReport_25.pdf"
+    },
+    {
+      "Id": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\wwwroot\\reports\\ClaimReport_32.pdf",
+      "PackagePath": "staticwebassets\\reports\\ClaimReport_32.pdf"
+    },
+    {
+      "Id": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\wwwroot\\reports\\ClaimReport_33.pdf",
+      "PackagePath": "staticwebassets\\reports\\ClaimReport_33.pdf"
+    },
+    {
+      "Id": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\wwwroot\\reports\\ClaimReport_9.pdf",
+      "PackagePath": "staticwebassets\\reports\\ClaimReport_9.pdf"
+    },
+    {
+      "Id": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\wwwroot\\reports\\Claim_Lindo Moyana_20241120154303.pdf",
+      "PackagePath": "staticwebassets\\reports\\Claim_Lindo Moyana_20241120154303.pdf"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ProgPoePart2_6212.Microsoft.AspNetCore.StaticWebAssets.props",

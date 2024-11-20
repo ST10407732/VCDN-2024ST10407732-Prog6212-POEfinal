@@ -107,43 +107,52 @@
                     <th>Actions</th> <!-- Actions column -->
                 </tr>
             </thead>
-            <tbody>
-                @foreach (var claim in Model)
+           <tbody>
+    @foreach (var claim in Model)
+    {
+        <tr>
+            <td>@claim.HoursWorked</td>
+            <td>@claim.HourlyRate</td>
+            <td>@(claim.HoursWorked * claim.HourlyRate)</td> <!-- Calculate and display the total -->
+            <td>@claim.Status</td>
+            <td>@claim.Notes</td>
+            <td>
+                @if (claim.Documents != null && claim.Documents.Any())
                 {
-                    <tr>
-                        <td>@claim.HoursWorked</td>
-                        <td>@claim.HourlyRate</td>
-                        <td>@(claim.HoursWorked * claim.HourlyRate)</td> <!-- Calculate and display the total -->
-                        <td>@claim.Status</td>
-                        <td>@claim.Notes</td>
-                        <td>
-                            @if (claim.Documents != null && claim.Documents.Any())
-                            {
-                                <div class="document-list">
-                                    @foreach (var document in claim.Documents)
-                                    {
-                                        <div class="document-item">
-                                            <a href="@Url.Content($"~/Uploads/{claim.Id}/{document.FileName}")" class="document-link">
-                                                @document.FileName
-                                            </a>
-                                            <span class="document-date"> - Uploaded on @document.UploadDate.ToShortDateString()</span>
-                                        </div>
-                                    }
-                                </div>
-                            }
-                            else
-                            {
-                                <span>No documents uploaded.</span>
-                            }
-                        </td>
+                    <div class="document-list">
+                        @foreach (var document in claim.Documents)
+                        {
+                            <div class="document-item">
+                                <a href="@Url.Content($"~/Uploads/{claim.Id}/{document.FileName}")" class="document-link">
+                                    @document.FileName
+                                </a>
+                                <span class="document-date"> - Uploaded on @document.UploadDate.ToShortDateString()</span>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <span>No documents uploaded.</span>
+                }
+            </td>
                         <td>
                             <a asp-controller="LecturerClaims" asp-action="ClaimDetails" asp-route-id="@claim.Id" class="btn btn-info btn-sm">
                                 View Details
                             </a>
+
+                            @if (claim.Status == ProgPoePart2_6212.Models.ClaimStatus.Rejected)
+                            {
+                                <a asp-controller="LecturerClaims" asp-action="ResubmitClaim" asp-route-id="@claim.Id" class="btn btn-warning btn-sm" style="margin-left: 8px;">
+                                    Resubmit
+                                </a>
+                            }
                         </td>
-                    </tr>
-                }
-            </tbody>
+
+        </tr>
+    }
+</tbody>
+
         </table>
     </div>
 </body>

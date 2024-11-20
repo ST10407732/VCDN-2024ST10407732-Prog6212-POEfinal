@@ -18,7 +18,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Configure the database connection (use your actual connection string)
-var connectionString = builder.Configuration.GetConnectionString("ProgPoe6212");
+var connectionString = builder.Configuration.GetConnectionString("Prog6212");
 builder.Services.AddDbContext<ProgPoePart2_6212Context>(options =>
     options.UseSqlServer(connectionString));
 

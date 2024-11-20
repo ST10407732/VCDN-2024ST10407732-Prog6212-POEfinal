@@ -4,12 +4,15 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using ProgPoePart2_6212.Data;
 using ProgPoePart2_6212.Models;
+using ProgPoePart2_6212.ViewModels;
 using System.Linq;
 using System.Threading.Tasks;
+using ClosedXML.Excel;
+
 
 namespace ProgPoePart2_6212.Controllers
 {
-   [Authorize(Roles = "HR")]
+     [Authorize(Roles = "HR")]
     public class HRDashboardController : Controller
     {
         private readonly ProgPoePart2_6212Context _context;
@@ -110,32 +113,41 @@ namespace ProgPoePart2_6212.Controllers
             return RedirectToAction(nameof(ManageLecturers));
         }
 
-        // Manage Claims (ManageClaims)
         public IActionResult ManageClaims()
         {
             var claims = _context.LecturerClaims
-                .Where(c => c.Status == ClaimStatus.PendingApproval)
-                .Include(c => c.User)
+                .Include(c => c.User) // Include Lecturer info
                 .ToList();
-
             return View(claims);
         }
-
-
-
-        // Approve Claim
-        public async Task<IActionResult> ApproveClaim(int id)
+        [HttpPost]
+        public async Task<IActionResult> DeleteClaim(int claimId)
         {
-            var claim = await _context.LecturerClaims.FindAsync(id);
-            if (claim != null)
+            var claim = await _context.LecturerClaims.FindAsync(claimId);
+            if (claim == null)
             {
-                claim.Status = ClaimStatus.Approved;
-                await _context.SaveChangesAsync();
+                TempData["Error"] = "Claim not found.";
                 return RedirectToAction(nameof(ManageClaims));
             }
-            return NotFound();
+
+            try
+            {
+                _context.LecturerClaims.Remove(claim);
+                await _context.SaveChangesAsync();
+                TempData["Message"] = "Claim deleted successfully.";
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error deleting claim with ID: {ClaimId}", claimId);
+                TempData["Error"] = "An error occurred while deleting the claim.";
+            }
+
+            return RedirectToAction(nameof(ManageClaims));
         }
 
+
+
+        
         // Reject Claim
         public async Task<IActionResult> RejectClaim(int id)
         {
@@ -157,8 +169,27 @@ namespace ProgPoePart2_6212.Controllers
                 .Where(c => c.Status == ClaimStatus.Approved)
                 .ToList();
 
-            return View(claims);
+            // Summary Data for the HR Report
+            var totalClaims = claims.Count;
+            var totalAmountClaimed = claims.Sum(c => c.HoursWorked * c.HourlyRate);
+            var averageClaim = claims.Any() ? claims.Average(c => c.HoursWorked * c.HourlyRate) : 0;
+            var highestClaim = claims.Any() ? claims.Max(c => c.HoursWorked * c.HourlyRate) : 0;
+            var lowestClaim = claims.Any() ? claims.Min(c => c.HoursWorked * c.HourlyRate) : 0;
+
+            // Pass both claims and summary data to the view
+            var reportData = new HRReportViewModel
+            {
+                Claims = claims,
+                TotalClaims = totalClaims,
+                TotalAmountClaimed = totalAmountClaimed,
+                AverageClaim = averageClaim,
+                HighestClaim = highestClaim,
+                LowestClaim = lowestClaim
+            };
+
+            return View(reportData);
         }
+
 
         [HttpPost]
         public async Task<IActionResult> BulkProcessClaims(int[] selectedClaims, string action)
@@ -274,19 +305,28 @@ namespace ProgPoePart2_6212.Controllers
             }
         }
 
+        
 
-        // Action to download invoice or claims summary as a report (DownloadInvoiceReport)
-        public IActionResult DownloadInvoiceReport()
+        public IActionResult ViewReports()
         {
-            var claims = _context.LecturerClaims
-                .Include(c => c.User)
-                .Where(c => c.Status == ClaimStatus.Approved)
+            var reportFiles = Directory.GetFiles("wwwroot/reports")
+                .Select(Path.GetFileName)
                 .ToList();
 
-            // Implement your logic to create and download a report (e.g., PDF, Excel)
-            // You can use a reporting library like Crystal Reports or SSRS for generating detailed reports.
+            return View(reportFiles);
+        }
 
-            return View("GenerateInvoiceReport", claims);
+        public IActionResult DownloadReport(string fileName)
+        {
+            var filePath = Path.Combine("wwwroot/reports", fileName);
+            if (!System.IO.File.Exists(filePath))
+            {
+                TempData["Error"] = "File not found.";
+                return RedirectToAction(nameof(ViewReports));
+            }
+
+            var fileBytes = System.IO.File.ReadAllBytes(filePath);
+            return File(fileBytes, "application/pdf", fileName);
         }
     }
 }
