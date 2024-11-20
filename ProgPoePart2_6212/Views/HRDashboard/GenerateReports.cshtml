@@ -1,7 +1,9 @@
-﻿<div>
-    <h2>Approved Claims Report</h2>
-    <a asp-action="DownloadPdfReport" class="btn btn-primary">Download PDF</a>
-    <a asp-action="DownloadExcelReport" class="btn btn-success">Download Excel</a>
+﻿<div class="report-container">
+    <h2 class="report-title">Approved Claims Report</h2>
+    <div class="download-buttons">
+        <a asp-action="DownloadPdfReport" class="btn btn-primary">Download PDF</a>
+        <a asp-action="DownloadExcelReport" class="btn btn-success">Download Excel</a>
+    </div>
 </div>
 
 <div class="summary-section">
@@ -15,7 +17,7 @@
     </ul>
 </div>
 
-<table class="table">
+<table class="table table-bordered table-striped claims-table">
     <thead>
         <tr>
             <th>Lecturer</th>
@@ -32,10 +34,103 @@
                 <td>@claim.User.FullName</td>
                 <td>@claim.HoursWorked</td>
                 <td>@claim.HourlyRate.ToString("C")</td>
-                <td>@(claim.HoursWorked * claim.HourlyRate)</td>
-                @(claim.HoursWorked * claim.HourlyRate).ToString("C")
+                <td>@(claim.HoursWorked * claim.HourlyRate).ToString("C")</td>
                 <td>@claim.Notes</td>
             </tr>
         }
     </tbody>
 </table>
+
+<!-- Add CSS to apply beige and brown theme -->
+<style>
+    body {
+        background-color: #f5f5dc; /* Beige background */
+        font-family: Arial, sans-serif;
+        color: #4b3c2f; /* Brown text color */
+    }
+
+    .report-container {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .report-title {
+        color: #4b3c2f;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .download-buttons a {
+        margin: 0 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+        border-color: #218838;
+    }
+
+    .summary-section {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #b28d65;
+        margin-bottom: 30px;
+    }
+
+    .summary-section h3 {
+        color: #4b3c2f;
+        margin-bottom: 15px;
+    }
+
+    .summary-section ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .summary-section li {
+        padding: 5px 0;
+        color: #4b3c2f;
+    }
+
+    .table {
+        width: 100%;
+        background-color: #ffffff;
+        border-radius: 8px;
+        border: 1px solid #b28d65;
+    }
+
+    .table th, .table td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    .table th {
+        background-color: #c4a37d; /* Beige table header */
+        color: #ffffff;
+    }
+
+    .table tbody tr:nth-child(odd) {
+        background-color: #f2e2c4; /* Light beige for odd rows */
+    }
+
+    .table tbody tr:nth-child(even) {
+        background-color: #ebd9b1; /* Lighter beige for even rows */
+    }
+</style>
