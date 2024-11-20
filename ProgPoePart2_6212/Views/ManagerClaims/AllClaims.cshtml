@@ -2,10 +2,11 @@
 
 <h2 class="text-center" style="color: #6a4f4b;">All Claims</h2>
 
-<h3 style="color: #6a4f4b;">Claims Pending for Approval</h3>
+<!-- Claims Pending for Approval -->
+<h3 style="color: #8b4513;">Claims Pending for Approval</h3>
 <form asp-action="BulkApproveClaims" method="post">
-    <table class="table table-striped table-bordered" style="background-color: #f5f5f5;">
-        <thead style="background-color: #d8c4a5; color: #6a4f4b;">
+    <table class="table table-striped table-bordered" style="background-color: #fffaf0;">
+        <thead style="background-color: #e2c799; color: #8b4513;">
             <tr>
                 <th>Select</th>
                 <th>Lecturer</th>
@@ -19,7 +20,7 @@
         <tbody>
             @foreach (var claim in Model.Where(c => c.Status == ClaimStatus.PendingApproval))
             {
-                <tr style="background-color: #f4e1c1;">
+                <tr style="background-color: #fff8dc;">
                     <td>
                         <input type="checkbox" name="selectedClaims" value="@claim.Id" />
                     </td>
@@ -44,7 +45,7 @@
                         }
                         else
                         {
-                            <span>No documents uploaded.</span>
+                            <span class="text-muted">No documents uploaded.</span>
                         }
                     </td>
                     <td>
@@ -56,12 +57,13 @@
         </tbody>
     </table>
 
-    <button type="submit" class="btn btn-primary" style="background-color: #6a4f4b; color: white;">Bulk Approve</button>
+    <button type="submit" class="btn btn-primary" style="background-color: #8b4513; color: white;">Bulk Approve</button>
 </form>
 
-<h3 style="color: #6a4f4b;">Approved Claims</h3>
-<table class="table table-striped table-bordered" style="background-color: #f5f5f5;">
-    <thead style="background-color: #c8e6c9; color: #6a4f4b;">
+<!-- Approved Claims -->
+<h3 style="color: #2e8b57;">Approved Claims</h3>
+<table class="table table-striped table-bordered" style="background-color: #f5fff5;">
+    <thead style="background-color: #a8d8a8; color: #2e8b57;">
         <tr>
             <th>Lecturer</th>
             <th>Hours Worked</th>
@@ -73,7 +75,7 @@
     <tbody>
         @foreach (var claim in Model.Where(c => c.Status == ClaimStatus.Approved))
         {
-            <tr style="background-color: #e8f5e9;">
+            <tr style="background-color: #e8ffe8;">
                 <td>@claim.User?.FullName</td>
                 <td>@claim.HoursWorked</td>
                 <td>@claim.HourlyRate.ToString("C")</td>
@@ -95,7 +97,7 @@
                     }
                     else
                     {
-                        <span>No documents uploaded.</span>
+                        <span class="text-muted">No documents uploaded.</span>
                     }
                 </td>
             </tr>
@@ -103,9 +105,10 @@
     </tbody>
 </table>
 
-<h3 style="color: #6a4f4b;">Rejected Claims</h3>
-<table class="table table-striped table-bordered" style="background-color: #f5f5f5;">
-    <thead style="background-color: #ffebee; color: #6a4f4b;">
+<!-- Rejected Claims -->
+<h3 style="color: #a52a2a;">Rejected Claims</h3>
+<table class="table table-striped table-bordered" style="background-color: #fff5f5;">
+    <thead style="background-color: #f4a6a6; color: #a52a2a;">
         <tr>
             <th>Lecturer</th>
             <th>Hours Worked</th>
@@ -117,7 +120,7 @@
     <tbody>
         @foreach (var claim in Model.Where(c => c.Status == ClaimStatus.Rejected))
         {
-            <tr style="background-color: #ffebee;">
+            <tr style="background-color: #ffe5e5;">
                 <td>@claim.User?.FullName</td>
                 <td>@claim.HoursWorked</td>
                 <td>@claim.HourlyRate.ToString("C")</td>
@@ -139,43 +142,10 @@
                     }
                     else
                     {
-                        <span>No documents uploaded.</span>
+                        <span class="text-muted">No documents uploaded.</span>
                     }
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
-<style>
-    .document-list {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .document-item {
-        margin-bottom: 5px;
-    }
-
-    .document-link {
-        color: #6a4f4b;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-        .document-link:hover {
-            text-decoration: underline;
-        }
-
-    .document-date {
-        font-size: 0.9em;
-        color: #6c757d;
-    }
-
-    .btn {
-        font-weight: bold;
-        padding: 10px 20px;
-        border-radius: 5px;
-        margin: 5px;
-    }
-</style>
