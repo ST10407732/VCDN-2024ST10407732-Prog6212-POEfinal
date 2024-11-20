@@ -4,10 +4,10 @@
     ViewData["Title"] = "Manage Claims";
 }
 
-<h2>Manage Claims</h2>
+<h2 class="page-title">Manage Claims</h2>
 
 <form method="post" asp-action="BulkProcessClaims">
-    <table class="table">
+    <table class="table table-bordered table-striped claim-table">
         <thead>
             <tr>
                 <th>Select</th>
@@ -22,7 +22,7 @@
             @foreach (var claim in Model)
             {
                 <tr>
-                    <td><input type="checkbox" name="selectedClaims" value="@claim.Id" /></td>
+                    <td><input type="checkbox" name="selectedClaims" value="@claim.Id" class="claim-checkbox" /></td>
                     <td>@claim.User.FullName</td>
                     <td>@claim.HoursWorked</td>
                     <td>@claim.HourlyRate.ToString("C")</td>
@@ -37,6 +37,59 @@
             }
         </tbody>
     </table>
-   @*  <button type="submit" name="action" value="approve" class="btn btn-success">Approve Selected</button>
-    <button type="submit" name="action" value="reject" class="btn btn-danger">Reject Selected</button> *@
 </form>
+
+<!-- Add CSS to apply beige and brown theme -->
+<style>
+    body {
+        background-color: #f5f5dc; /* Beige background */
+        font-family: Arial, sans-serif;
+        color: #4b3c2f; /* Brown text color */
+    }
+
+    .page-title {
+        color: #4b3c2f;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .table {
+        width: 100%;
+        background-color: #ffffff; /* White table background */
+        border-radius: 8px;
+        border: 1px solid #b28d65; /* Light brown border */
+    }
+
+        .table th, .table td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .table th {
+            background-color: #c4a37d; /* Beige table header */
+            color: #ffffff;
+        }
+
+        .table tbody tr:nth-child(odd) {
+            background-color: #f2e2c4; /* Light beige for odd rows */
+        }
+
+        .table tbody tr:nth-child(even) {
+            background-color: #ebd9b1; /* Lighter beige for even rows */
+        }
+
+    .claim-checkbox {
+        margin: 0;
+    }
+
+    /* Keep the delete button red as it was */
+    .btn-danger {
+        background-color: #dc3545; /* Red button */
+        border-color: #dc3545;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333; /* Darker red on hover */
+            border-color: #c82333;
+        }
+</style>
