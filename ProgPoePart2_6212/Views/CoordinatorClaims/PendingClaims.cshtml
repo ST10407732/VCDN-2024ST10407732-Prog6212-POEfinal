@@ -6,139 +6,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f1e1; /* Light beige background */
-            margin: 0;
-            padding: 0;
-        }
+   
 
-        .container {
-            width: 90%;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        h2 {
-            text-align: center;
-            color: #4e3629; /* Dark brown text */
-            font-size: 2.5em;
-            margin-bottom: 30px;
-        }
-
-        .claims-section {
-            margin-bottom: 40px;
-            background-color: #ffffff; /* White background for sections */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .section-title {
-            font-size: 1.8em;
-            color: #4e3629; /* Dark brown */
-            margin-bottom: 15px;
-            border-bottom: 2px solid #6e4c3b; /* Lighter brown border */
-            padding-bottom: 5px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #d1b29d; /* Beige border for rows */
-        }
-
-        th {
-            background-color: #6e4c3b; /* Lighter brown header */
-            color: white;
-        }
-
-        tr.pending {
-            background-color: #f9f1e1; /* Light beige for pending claims */
-        }
-
-        tr.approved {
-            background-color: #d6f5d6; /* Light greenish-beige for approved claims */
-        }
-
-        tr.rejected {
-            background-color: #f9d6d6; /* Light pink-beige for rejected claims */
-        }
-
-        .document-list {
-            margin-top: 10px;
-        }
-
-        .document-item {
-            margin-bottom: 8px;
-        }
-
-        .document-link {
-            text-decoration: none;
-            color: #6e4c3b; /* Dark brown */
-        }
-
-        .document-link:hover {
-            text-decoration: underline;
-        }
-
-        .document-date {
-            font-size: 0.9em;
-            color: #8c6b53; /* Slightly lighter brown for dates */
-        }
-
-        .btn {
-            padding: 8px 16px;
-            font-size: 1em;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-right: 8px;
-        }
-
-        .btn-success {
-            background-color: #4e3629; /* Dark brown for approve button */
-            color: white;
-        }
-
-        .btn-danger {
-            background-color: #d9534f; /* Red for reject button */
-            color: white;
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-        }
-
-        .text-muted {
-            color: #a89f91; /* Muted brownish-gray for "No documents" */
-        }
-
-      
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f4f1e1; /* Light beige background */
+                margin: 0;
+                padding: 0;
+            }
 
             .container {
-                width: 100%;
+                width: 90%;
+                margin: 0 auto;
+                padding: 20px;
             }
 
-            table th, table td {
-                font-size: 0.9em;
-                padding: 8px;
+            h2 {
+                text-align: center;
+                color: #4e3629; /* Dark brown text */
+                font-size: 2.5em;
+                margin-bottom: 30px;
             }
-        }
-    </style>
+
+            .claims-section {
+                margin-bottom: 40px;
+                background-color: #ffffff; /* White background for sections */
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .section-title {
+                font-size: 1.8em;
+                margin-bottom: 15px;
+                border-bottom: 2px solid;
+                padding-bottom: 5px;
+            }
+
+            .pending-title {
+                color: #6e4c3b; /* Light brown */
+                border-color: #6e4c3b;
+            }
+
+            .approval-title {
+                color: #2a7f62; /* Green */
+                border-color: #2a7f62;
+            }
+
+            .approved-title {
+                color: #2c6fa6; /* Blue */
+                border-color: #2c6fa6;
+            }
+
+            .rejected-title {
+                color: #d9534f; /* Red */
+                border-color: #d9534f;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 10px;
+            }
+
+            th, td {
+                padding: 12px;
+                text-align: left;
+                border-bottom: 1px solid #d1b29d; /* Beige border for rows */
+            }
+
+            th {
+                background-color: #6e4c3b; /* Lighter brown header */
+                color: white;
+            }
+
+            tr.pending {
+                background-color: #f9f1e1; /* Light beige for pending claims */
+            }
+
+            tr.approved {
+                background-color: #d6f5d6; /* Light greenish-beige for approved claims */
+            }
+
+            tr.rejected {
+                background-color: #f9d6d6; /* Light pink-beige for rejected claims */
+            }
+
+            .document-list {
+                margin-top: 10px;
+            }
+
+            .document-item {
+                margin-bottom: 8px;
+            }
+
+            .document-link {
+                text-decoration: none;
+                color: #6e4c3b; /* Dark brown */
+            }
+
+                .document-link:hover {
+                    text-decoration: underline;
+                }
+
+            .document-date {
+                font-size: 0.9em;
+                color: #8c6b53; /* Slightly lighter brown for dates */
+            }
+
+            .btn {
+                padding: 8px 16px;
+                font-size: 1em;
+                text-decoration: none;
+                border-radius: 5px;
+                margin-right: 8px;
+            }
+
+            .btn-success {
+                background-color: #4e3629; /* Dark brown for approve button */
+                color: white;
+            }
+
+            .btn-danger {
+                background-color: #d9534f; /* Red for reject button */
+                color: white;
+            }
+
+            .btn:hover {
+                opacity: 0.9;
+            }
+
+            .text-muted {
+                color: #a89f91; /* Muted brownish-gray for "No documents" */
+            }
+        </style>
 </head>
 <body>
     <div class="container mt-5">
         <h2>Claims Overview</h2>
 
-        <div class="claims-section">
-            <h3 class="section-title">Pending Claims for Verification</h3>
+            <div class="claims-section">
+                <h3 class="section-title pending-title">Pending Claims for Verification</h3>
             <table>
                 <thead>
                     <tr>
@@ -188,8 +203,8 @@
             </table>
         </div>
 
-        <div class="claims-section">
-            <h3 class="section-title">Pending Approval Claims</h3>
+            <div class="claims-section">
+                <h3 class="section-title approval-title">Pending Approval Claims</h3>
             <table>
                 <thead>
                     <tr>
@@ -234,8 +249,8 @@
             </table>
         </div>
 
-        <div class="claims-section">
-            <h3 class="section-title">Approved Claims</h3>
+            <div class="claims-section">
+                <h3 class="section-title approved-title">Approved Claims</h3>
             <table>
                 <thead>
                     <tr>
@@ -280,8 +295,8 @@
             </table>
         </div>
 
-        <div class="claims-section">
-            <h3 class="section-title">Rejected Claims</h3>
+            <div class="claims-section">
+                <h3 class="section-title rejected-title">Rejected Claims</h3>
             <table>
                 <thead>
                     <tr>
