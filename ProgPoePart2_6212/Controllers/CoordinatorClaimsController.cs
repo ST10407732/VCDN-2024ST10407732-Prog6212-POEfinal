@@ -99,55 +99,6 @@ namespace ProgPoePart2_6212.Controllers
 
 
 
-        //// Action to verify a claim
-        //public async Task<IActionResult> VerifyClaim(int id)
-        //{
-        //    try
-        //    {
-        //        var claim = await _context.LecturerClaims.FindAsync(id);
-        //        if (claim == null)
-        //        {
-        //            _logger.LogWarning("Claim not found with ID: {ClaimId}", id);
-        //            return NotFound();
-        //        }
-
-        //        claim.Status = ClaimStatus.PendingApproval;
-        //        await _context.SaveChangesAsync();
-
-        //        _logger.LogInformation("Claim verified with ID: {ClaimId}", id);
-        //        return RedirectToAction(nameof(PendingClaims));
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogError(ex, "An error occurred while verifying the claim.");
-        //        return RedirectToAction(nameof(PendingClaims)); // Or show an error view
-        //    }
-        //}
-        // Action to reject a claim
-        //    public async Task<IActionResult> RejectClaim(int id)
-        //    {
-        //        try
-        //        {
-        //            var claim = await _context.LecturerClaims.FindAsync(id);
-        //            if (claim == null)
-        //            {
-        //                _logger.LogWarning("Claim not found with ID: {ClaimId}", id);
-        //                return NotFound();
-        //            }
-
-        //            claim.Status = ClaimStatus.Rejected; // Set status to Rejected
-        //            await _context.SaveChangesAsync();
-
-        //            _logger.LogInformation("Claim rejected with ID: {ClaimId}", id);
-        //            return RedirectToAction(nameof(PendingClaims));
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            _logger.LogError(ex, "An error occurred while rejecting the claim.");
-        //            return RedirectToAction(nameof(PendingClaims)); // Or show an error view
-        //        }
-        //    }
-
-        //}
+      
     }
 }
