@@ -1,5 +1,28 @@
 YOUTHUBE LINK
 https://youtu.be/S228-KLeBeg
+Login Instructions for Different User Roles 
+To access the Contract Monthly Claim System, please log in with the following credentials based on your role: 
+1.	HR LOGIN!!! 
+•	Email: hr@cmcs.com 
+•	Password: Hrcmcs@123
+•	Instructions: Ensure that you enter the correct email and password associated with your HR  role to access the dashboard for managing claims and lecturers and geneating reports. 
+
+2.	Programme Coordinator Login!!! 
+•	Email: programmecoordinator@cmcs.com 
+•	Password: Cmcs@123 
+•	Instructions: Ensure that you enter the correct email and password associated with your Programme Coordinator role to access the dashboard for verifying claims and managing submissions. 
+3.	Academic Manager Login !!! 
+•	Email: academicmanager@cmcs.com 
+•	Password: Cmcs@123 
+•	Instructions: Please use the email and password provided for your Academic Manager role. This will grant you access to approve claims submitted by lecturers. 
+Lecturer 
+Register first with your email!! 
+•	Email: [Insert YourEmail] 
+•	Password: [Insert Your Password] 
+•	Instructions: Log in with your email and password to submit claims and track your submissions effectively. 
+ 
+ 
+
 
 Feedback
 After reviewing Part 2 of the project, no feedback or specific recommendations for improvement were received. The system already met the expected requirements and standards, as outlined in the rubric provided. The interface was noted as elegant and user-friendly, with no suggestions for changes.
