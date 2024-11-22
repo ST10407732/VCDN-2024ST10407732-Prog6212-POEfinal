@@ -1,0 +1,51 @@
+
+package com.mycompany.sammysrentalprice;
+import java.util.Scanner;
+
+
+public class SammysRentalPrice {
+
+    public static void main(String[] args) {
+        
+       // Declaring variables
+     int Minutes;
+     int minute;
+     int hour;
+     int rentedMin;
+    int rentedminutes;
+    int extraMinute;
+    int costRate;
+    final int costperHour = 40;
+    final int costperAddMin = 1; 
+    int AddMin;
+    int TotalPrice;
+    int TotalTime;
+    Scanner input = new Scanner(System.in);
+    
+//prompt user for data
+        System.out.println("Enter the number of hours you rented>>");
+        hour = input.nextInt();
+        System.out.println("Enter number of minutes or extra minutes you rented");
+        AddMin = input.nextInt();
+        
+   // Rental Cost Rate = ("$40 * 60 Minutes" + "$1 * Minute");
+   
+   extraMinute = (costperAddMin * AddMin );
+   costRate = (40 * (hour *60) + extraMinute);
+   TotalPrice = costRate;
+  
+    //  System.out.println("Sammy's Seashore Supplies");
+        System.out.println("Sammy's Seashore Supplies");
+        System.out.println("-----------------------------");
+        System.out.println("      ");
+        System.out.println("Hours: " + hour + "     Minutes: " + AddMin);
+        System.out.println("Full price: " + "$" +TotalPrice);
+        
+        //closing statement
+
+        System.out.println("You have Rented for " + hour + "hour" + AddMin + " Minutes and your price is $" + TotalPrice);
+   
+   
+           }
+    
+}

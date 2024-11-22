@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1a0XbZQtuftkUTCgN8x2XRurz81j9qZp6l0nbeMMFTk=",
+  "Hash": "E2kkF0DbdAstPLVaawOzByUJ33oH4ndfMHYolBKl8bQ=",
   "Source": "ProgPoePart2_6212",
   "BasePath": "_content/ProgPoePart2_6212",
   "Mode": "Default",
@@ -1193,6 +1193,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\wwwroot\\reports\\Claim_DAVID CHITOMBI_20241121004806.pdf",
+      "SourceId": "ProgPoePart2_6212",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\wwwroot\\",
+      "BasePath": "_content/ProgPoePart2_6212",
+      "RelativePath": "reports/Claim_DAVID CHITOMBI_20241121004806.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\reports\\Claim_DAVID CHITOMBI_20241121004806.pdf"
     },
     {
       "Identity": "C:\\Users\\davyc\\source\\repos\\ProgPoePart2_6212\\ProgPoePart2_6212\\wwwroot\\reports\\Claim_Lindo Moyana_20241120154303.pdf",

@@ -34,7 +34,7 @@
                 <td>@claim.User.FullName</td>
                 <td>@claim.HoursWorked</td>
                 <td>@claim.HourlyRate.ToString("C")</td>
-                <td>@(claim.HoursWorked * claim.HourlyRate).ToString("C")</td>
+                <td>@(claim.HoursWorked * claim.HourlyRate)</td>
                 <td>@claim.Notes</td>
             </tr>
         }
